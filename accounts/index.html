@@ -41,8 +41,11 @@
                     </div>
                     <span class="brand-name">eclipsia<span class="brand-tag">/ account</span></span>
                 </a>
-                <div class="header-nav-links">
-                    <a href="../" class="nav-action">← Back to Manifest</a>
+                <div class="header-nav-links header-nav-links--persist">
+                    <a href="../" class="nav-action nav-action--back">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+                        <span class="nav-action-label">Back to Manifest</span>
+                    </a>
                 </div>
             </div>
         </header>
@@ -156,6 +159,19 @@
                                 <button class="filter-chip" data-panel="profileManager" type="button">Profiles</button>
                                 <button class="filter-chip" data-panel="dashboard" type="button">Dashboard</button>
                             </div>
+
+                            <select class="form-input panel-nav-select" id="panelNavSelect" aria-label="Account sections">
+                                <option value="plugins" selected>Plugins</option>
+                                <option value="addons">Addons</option>
+                                <option value="library">Library</option>
+                                <option value="progress">Watch Progress</option>
+                                <option value="history">Watch History</option>
+                                <option value="settings">Settings</option>
+                                <option value="homeCatalog">Home Catalog</option>
+                                <option value="collections">Collections</option>
+                                <option value="profileManager">Profiles</option>
+                                <option value="dashboard">Dashboard</option>
+                            </select>
 
                             <div id="panels">
 

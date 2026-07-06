@@ -142,6 +142,7 @@
         profileSelect: $('profileSelect'),
         signOutBtn: $('signOutBtn'),
         panelNav: $('panelNav'),
+        panelNavSelect: $('panelNavSelect'),
         panels: $('panels')
     };
 
@@ -279,6 +280,9 @@
         els.panelNav.querySelectorAll('.filter-chip').forEach((chip) => {
             chip.classList.toggle('active', chip.dataset.panel === name);
         });
+        if (els.panelNavSelect && els.panelNavSelect.value !== name) {
+            els.panelNavSelect.value = name;
+        }
         els.panels.querySelectorAll('.panel').forEach((p) => {
             p.style.display = p.dataset.panel === name ? '' : 'none';
         });
@@ -291,6 +295,9 @@
         els.panelNav.querySelectorAll('.filter-chip').forEach((chip) => {
             chip.addEventListener('click', () => activatePanel(chip.dataset.panel));
         });
+        if (els.panelNavSelect) {
+            els.panelNavSelect.addEventListener('change', () => activatePanel(els.panelNavSelect.value));
+        }
     }
 
     if (els.profileSelect) {
