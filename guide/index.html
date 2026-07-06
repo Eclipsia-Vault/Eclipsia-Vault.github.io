@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-scroll-behavior="smooth">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.bunny.net;
+    font-src https://fonts.bunny.net;
+    img-src 'self' data:;
+    connect-src 'self' https://api.nuvio.tv;
+    script-src 'self';
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'none';
+  ">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
+    <link rel="icon" type="image/png" href="../assets/icon.png">
+    <link rel="apple-touch-icon" href="../assets/logo.png">
+
+    <title>Setup Guide — Eclipsia</title>
+    <meta name="description" content="A step-by-step, beginner-friendly setup wizard for installing Nuvio on Android, iOS, and TV platforms.">
+
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=source-serif-4:500,600|inter:400,500,600,700|jetbrains-mono:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <div class="app-wrapper">
+
+        <header class="site-header">
+            <div class="wrap header-inner">
+                <a class="brand" href="../" style="min-width:0;">
+                    <div class="brand-icon" aria-hidden="true">
+                        <img src="../assets/icon.png" alt="Eclipsia">
+                    </div>
+                    <span class="brand-name">eclipsia<span class="brand-tag">/ guide</span></span>
+                </a>
+                
+                <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle navigation menu">
+                    <svg class="nav-toggle-icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                    <svg class="nav-toggle-icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="../" class="mobile-nav-link">← Back to Manifest</a>
+                <a href="../accounts/" class="mobile-nav-link">Account</a>
+            </div>
+        </header>
+
+        <main class="wrap">
+
+            <section class="hero guide-hero" id="guideHero">
+                <div class="eyebrow">step-by-step · beginner friendly</div>
+                <h1 class="hero-title">Setup Guide</h1>
+                <p class="hero-description">
+                    Pick your device below and we'll walk you through installing <strong>Nuvio</strong>
+                    one step at a time — It’s super easy.
+                </p>
+            </section>
+
+            <section class="install-container" id="wizardSection">
+                <div class="install-titlebar">
+                    <div class="titlebar-dots"><span></span><span></span><span></span></div>
+                    <span class="install-titlebar-label">setup wizard</span>
+                </div>
+                <div class="install-body">
+                    <div id="wizardRoot"></div>
+                </div>
+            </section>
+
+            <div class="guide-footnote-box">
+                <p id="guideFootnoteText">Already have Nuvio installed? <a href="../#install">Jump straight to adding Eclipsia's plugins</a>.</p>
+            </div>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="wrap footer-content">
+                <span>Eclipsia • distributed under GPL v3</span>
+                <a class="footer-link" href="../privacy/">Privacy Policy</a>
+                <a class="footer-link" href="https://github.com/NuvioMedia" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">github.com/NuvioMedia</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../assets/js/guide.js" defer></script>
+
+</body>
+
+</html>
