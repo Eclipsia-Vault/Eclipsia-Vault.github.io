@@ -141,9 +141,6 @@ img {
   }
 }
 
-/* ========================
-   HEADER — Glass morphism
-   ======================== */
 .site-header {
   position: sticky;
   top: 0;
@@ -401,22 +398,11 @@ img {
   }
 }
 
-/* ========================
-   HERO SECTION
-   ======================== */
 .hero {
   padding: 5rem 0 2.5rem;
   position: relative;
 }
 
-/* Decorative eclipse motif — soft glow + ring, anchored to the right of
-   the hero title/description so the wide empty column beside the
-   (intentionally narrow-measure) copy doesn't read as blank. Anchored
-   with a fixed offset from the top of the hero — rather than a
-   percentage of its full height — so it stays beside the headline
-   instead of drifting down behind the (much taller) install-container
-   box that follows. Purely visual: no layout width is reserved for it,
-   so copy width/wrapping is unaffected. */
 .hero::before {
   content: "";
   position: absolute;
@@ -579,9 +565,6 @@ h1.hero-title {
   background: var(--bg-2);
 }
 
-/* ========================
-   INSTALL CONTAINER
-   ======================== */
 .install-container {
   margin: 2rem 0 1.75rem;
   border: 1px solid var(--line-strong);
@@ -690,9 +673,6 @@ h1.hero-title {
   flex-shrink: 0;
 }
 
-/* Neutral variant for informational (non-warning) banners, e.g. the
-   "sign in to sync" callout — reuses .warning-banner's layout but in
-   the ok/accent color instead of the warn color. */
 .warning-banner.banner-neutral {
   background: rgba(138, 160, 122, 0.05);
   border-color: rgba(138, 160, 122, 0.18);
@@ -758,7 +738,6 @@ h1.hero-title {
   transform: rotate(90deg);
 }
 
-/* Collapsible manual-setup section */
 .manual-toggle {
   border: 1px solid var(--line);
   border-radius: var(--radius-s);
@@ -846,7 +825,6 @@ h1.hero-title {
   padding: 1.5rem 1.25rem 1.25rem;
 }
 
-/* Numbered guide steps (TMDB key walkthrough) */
 .guide-steps {
   display: flex;
   flex-direction: column;
@@ -914,7 +892,6 @@ h1.hero-title {
   border-radius: var(--radius-s);
 }
 
-/* Platform download grid */
 .platform-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -984,9 +961,6 @@ h1.hero-title {
   color: inherit;
 }
 
-/* Bright variant — same layout as .platform-btn, but colored like the
-   primary "Next" button, for a single download action that should stand
-   out rather than blend in with a row of equal-weight platform choices. */
 .platform-btn.platform-btn-primary {
   background: linear-gradient(180deg, #9bb38a 0%, var(--accent-ok) 100%);
   border-color: var(--accent-ok);
@@ -1026,7 +1000,6 @@ h1.hero-title {
   }
 }
 
-/* Providers section mobile toggle */
 .providers-toggle-btn {
   display: none;
   width: 100%;
@@ -1412,9 +1385,6 @@ h1.hero-title {
   }
 }
 
-/* ========================
-   ACCOUNT SYNC SECTION
-   ======================== */
 .account-section {
   padding: 1rem 0 2rem;
 }
@@ -1561,9 +1531,6 @@ select.form-input option {
   }
 }
 
-/* ========================
-   PROVIDERS SECTION
-   ======================== */
 .providers-section {
   padding: 2rem 0 2rem;
 }
@@ -1742,8 +1709,6 @@ select.form-input option {
   opacity: 0.45;
 }
 
-/* Skeleton loading state — shown while manifest.json is being fetched so
-   the list doesn't sit blank under the "Loading…" status line. */
 .provider-row.skeleton-row {
   pointer-events: none;
 }
@@ -1911,9 +1876,6 @@ select.form-input option {
   border: 1px solid rgba(209, 207, 192, 0.3);
   background: #d1cfc0;
   color: var(--bg-0);
-  /* Entrance + a few pulses to draw the eye once, then settle — an
-     `infinite` glow here reads as broken/distracting when this class
-     ends up on more than one element at a time (e.g. every row in a list). */
   animation: focusPillIn 420ms var(--ease) backwards,
     focusPillGlow 2.8s ease-in-out 420ms 2;
 }
@@ -1938,8 +1900,6 @@ select.form-input option {
     box-shadow: 0 0 0 4px rgba(209, 207, 192, 0.12);
   }
 }
-
-/* Site-wide entrance & reveal animations (no external deps) */
 
 @keyframes fadeUp {
   from {
@@ -2016,9 +1976,6 @@ h1.hero-title {
   text-align: right;
 }
 
-/* ========================
-   LEGAL SECTION
-   ======================== */
 .section-head.legal-head {
   border-bottom: none;
   padding-bottom: 0;
@@ -2075,10 +2032,6 @@ h1.hero-title {
   font-size: 0.85rem;
   line-height: 1.75;
   margin-bottom: 1.25rem;
-  /* Left-align rather than justify (overrides any legacy align="justify"
-     markup): justified text without full hyphenation support creates
-     uneven rivers of whitespace at this measure, especially on narrow
-     screens — ragged-right reads more comfortably here. */
   text-align: left;
   hyphens: auto;
 }
@@ -2117,9 +2070,6 @@ h1.hero-title {
   flex-shrink: 0;
 }
 
-/* ========================
-   FOOTER
-   ======================== */
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1rem 0;
@@ -2144,10 +2094,6 @@ h1.hero-title {
 .footer-link:hover {
   color: var(--ink-primary);
 }
-
-/* ========================
-   MOBILE RESPONSIVE STYLES
-   ======================== */
 
 @media (max-width: 900px) {
   .col-head {
@@ -2587,9 +2533,6 @@ h1.hero-title {
   }
 }
 
-/* ========================
-   PRIVACY / DATA-FLOW NOTE (accounts page)
-   ======================== */
 .privacy-note-block {
   border: 1px solid var(--line);
   border-radius: var(--radius-m);
@@ -2638,10 +2581,6 @@ h1.hero-title {
   color: var(--ink-secondary);
   font-weight: 600;
 }
-
-/* ------------------------------------------------------------------ */
-/* Setup wizard (/guide)                                              */
-/* ------------------------------------------------------------------ */
 
 .guide-hero {
   padding-bottom: 1.5rem;
@@ -2713,7 +2652,6 @@ h1.hero-title {
   height: 14px;
 }
 
-/* Platform picker */
 .platform-pick-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -2788,7 +2726,6 @@ h1.hero-title {
   .platform-pick-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Method picker */
 .method-pick-grid {
   display: flex;
   flex-direction: column;
@@ -2844,7 +2781,6 @@ h1.hero-title {
   line-height: 1.5;
 }
 
-/* Step wizard */
 .wizard-progress {
   display: flex;
   align-items: center;
@@ -2991,11 +2927,6 @@ h1.hero-title {
   }
 }
 
-/* =========================================================================
-   Account panel system (Plugins / Addons / Library / Progress / History /
-   Settings / Home Catalog / Collections / Profiles / Dashboard)
-   ========================================================================= */
-
 .panel-nav {
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
@@ -3024,8 +2955,6 @@ h1.hero-title {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Stagger delays for .reveal items grouped inside a list/grid container,
-   applied via the .reveal-group JS helper (adds --reveal-i per child). */
 .reveal-group .reveal {
   transition-delay: calc(var(--reveal-i, 0) * 60ms);
 }

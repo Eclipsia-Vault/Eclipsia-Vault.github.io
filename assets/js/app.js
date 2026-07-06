@@ -3,7 +3,6 @@
 
 	const MANIFEST_URL = 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/manifest.json';
 
-	// Used only if the live fetch fails (offline, blocked, GitHub down, etc.)
 	const FALLBACK_SCRAPERS = [{
 			name: 'Eclipsia',
 			provider: 'NoTorrent',
@@ -146,7 +145,6 @@
 		} [c]));
 	}
 
-	// Maps the raw manifest.json "scrapers" array into the shape the UI renders.
 	function mapManifestScraper(s) {
 		const name = String(s.name || '').replace(/\.\s*$/, '').trim();
 		const desc = String(s.description || '');
@@ -357,12 +355,7 @@
 			setState(!expanded);
 		});
 	}
-
-	// Generic handler for any trigger with data-opens="<details id>". Wires up
-	// each trigger to its own target individually (instead of a single
-	// querySelector('.banner-cta'), which only ever matched the FIRST
-	// .banner-cta on the page — silently hijacking the "Sign in / Create
-	// account" link and leaving the real TMDB link with no handler at all).
+  
 	function initCollapsibleTriggers() {
 		document.querySelectorAll('[data-opens]').forEach((trigger) => {
 			const target = document.getElementById(trigger.getAttribute('data-opens'));
@@ -381,17 +374,6 @@
 			});
 		});
 	}
-
-	// Mobile custom-URL-scheme deep links (nuvio://...) give web pages no
-	// reliable way to know whether the OS actually handed off to the app —
-	// there's no success/failure event, and many mobile browsers don't even
-	// fire visibilitychange/blur when the app *does* open. So we deliberately
-	// do NOT try to auto-detect failure and pop the fallback open — that was
-	// tried and produced false positives (the fallback opened on basically
-	// every tap, masking legitimate app launches). Instead we just let the
-	// link attempt the deep link normally, and rely on the explicit
-	// "Button not working?" link (data-opens="manualAddGuide") for anyone
-	// who actually needs the manual fallback.
 
 	async function loadLastUpdated() {
 		if (!els.lastUpdated) return;
@@ -450,9 +432,6 @@
 	}
 
 	function autoTagRevealGroups() {
-		// Card/list containers that don't already opt into .reveal manually
-		// get it applied automatically, with a per-child stagger index, so
-		// they fade/rise into place the same way the mobile nav links do.
 		const groupSelectors = [
 			'#scraperCards',
 			'.method-pick-grid',

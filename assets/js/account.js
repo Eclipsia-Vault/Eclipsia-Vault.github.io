@@ -1,12 +1,8 @@
 (function () {
     'use strict';
 
-    // NuvioClient must be loaded before this file (see index.html script order).
     if (!window.NuvioClient) return;
 
-    // Manifest variants for the "Add Eclipsia" quick-add menu.
-    // All three point to the same default manifest for now — update the
-    // english/main URLs once those variants are published.
     const MANIFESTS = {
         stable: {
             label: 'Stable',
@@ -14,21 +10,17 @@
         },
         english: {
             label: 'English',
-            url: 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/stable/manifest.json'
+            url: 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/english/manifest.json'
         },
         main: {
-            label: 'Main',
-            url: 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/stable/manifest.json'
+            label: 'All Providers',
+            url: 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/manifest.json'
         }
     };
     const DEFAULT_MANIFEST_KEY = 'stable';
     const PLUGIN_NAME = 'Eclipsia';
     const SESSION_KEY = 'eclipsia_nuvio_session';
     const TOKEN_REFRESH_SKEW_MS = 30 * 1000;
-
-    // =========================================================================================
-    // Session storage (tab-scoped; never persisted to localStorage)
-    // =========================================================================================
 
     function saveSession(session) {
         try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(session)); } catch {}
@@ -73,10 +65,6 @@
 
     const client = new window.NuvioClient({ getToken: ensureFreshToken });
 
-    // =========================================================================================
-    // Small DOM helpers
-    // =========================================================================================
-
     const $ = (id) => document.getElementById(id);
 
     function setStatus(el, text, state) {
@@ -105,7 +93,6 @@
         return node;
     }
 
-    /** Replace a container's content with a single "Loading…"-style status paragraph. No HTML strings involved. */
     function setLoading(container, text) {
         if (!container) return;
         container.replaceChildren(el('p', { class: 'sync-status pending', text }));
@@ -124,10 +111,6 @@
         const s = total % 60;
         return h ? `${h}h ${m}m` : `${m}m ${s}s`;
     }
-
-    // =========================================================================================
-    // Core auth elements
-    // =========================================================================================
 
     const els = {
         signedOut: $('authSignedOut'),
@@ -151,11 +134,7 @@
     let authMode = 'signin';
     let currentProfiles = [];
     let currentProfileId = 1;
-    let avatarCatalog = null; // lazy-loaded cache
-
-    // =========================================================================================
-    // Auth flow
-    // =========================================================================================
+    let avatarCatalog = null;
 
     function setAuthMode(mode) {
         authMode = mode;
@@ -266,10 +245,6 @@
         }
     }
 
-    // =========================================================================================
-    // Panel navigation
-    // =========================================================================================
-
     function getActivePanelName() {
         const btn = els.panelNav && els.panelNav.querySelector('.filter-chip.active');
         return btn ? btn.dataset.panel : null;
@@ -308,17 +283,9 @@
         });
     }
 
-    // =========================================================================================
-    // Generic helper: normalize a URL for de-dupe comparisons
-    // =========================================================================================
-
     function normalizeUrl(u) {
         return String(u || '').trim().replace(/\/+$/, '').toLowerCase();
     }
-
-    // =========================================================================================
-    // Panel: Plugins (includes the original "Add Eclipsia" quick action)
-    // =========================================================================================
 
     const pluginsPanel = (function () {
         const status = $('pluginsStatus');
@@ -434,10 +401,6 @@
         return { load };
     })();
 
-    // =========================================================================================
-    // Panel: Addons (same shape as plugins, no repo_type)
-    // =========================================================================================
-
     const addonsPanel = (function () {
         const status = $('addonsStatus');
         const list = $('addonsList');
@@ -522,10 +485,6 @@
         return { load };
     })();
 
-    // =========================================================================================
-    // Panel: Library
-    // =========================================================================================
-
     const libraryPanel = (function () {
         const status = $('libraryStatus');
         const list = $('libraryList');
@@ -587,10 +546,6 @@
         return { load };
     })();
 
-    // =========================================================================================
-    // Panel: Watch Progress (read + delete; push is device/player driven, not exposed here)
-    // =========================================================================================
-
     const progressPanel = (function () {
         const status = $('progressStatus');
         const list = $('progressList');
@@ -639,10 +594,6 @@
 
         return { load };
     })();
-
-    // =========================================================================================
-    // Panel: Watch History
-    // =========================================================================================
 
     const historyPanel = (function () {
         const status = $('historyStatus');
@@ -693,10 +644,6 @@
 
         return { load };
     })();
-
-    // =========================================================================================
-    // Generic JSON-blob panel factory — used for Settings, Home Catalog, Collections
-    // =========================================================================================
 
     function makeJsonBlobPanel({ statusId, textareaId, saveBtnId, reloadBtnId, get, update, unwrap, defaultValue }) {
         const status = $(statusId);
@@ -776,10 +723,6 @@
         unwrap: (rows) => (rows && rows[0] ? rows[0].collections_json : undefined),
         defaultValue: []
     });
-
-    // =========================================================================================
-    // Panel: Profile management (rename/recolor/avatar, create, delete)
-    // =========================================================================================
 
     const profileManagerPanel = (function () {
         const status = $('profileManagerStatus');
@@ -921,10 +864,6 @@
         return { load };
     })();
 
-    // =========================================================================================
-    // Panel: Dashboard — sync overview + API health
-    // =========================================================================================
-
     const dashboardPanel = (function () {
         const status = $('dashboardStatus');
         const overviewEl = $('dashboardOverview');
@@ -985,10 +924,6 @@
         return { load };
     })();
 
-    // =========================================================================================
-    // Panel registry
-    // =========================================================================================
-
     const panelLoaders = {
         plugins: pluginsPanel.load,
         addons: addonsPanel.load,
@@ -1001,10 +936,6 @@
         profileManager: profileManagerPanel.load,
         dashboard: dashboardPanel.load
     };
-
-    // =========================================================================================
-    // Init
-    // =========================================================================================
 
     function init() {
         setAuthMode('signin');

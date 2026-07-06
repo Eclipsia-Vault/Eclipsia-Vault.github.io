@@ -379,11 +379,6 @@
     }
 
     setMode('signup');
-
-    // If a session already exists — e.g. the person signed in earlier in
-    // this same guide, or came from the dedicated Account page — skip
-    // straight to the profile/plugin step instead of asking them to sign
-    // in again.
     (async () => {
       const stored = nuvioLoadSession();
       if (!stored) {
@@ -405,11 +400,7 @@
       }
     })();
   }
-
-  // ---------------------------------------------------------------------
-  // Content
-  // ---------------------------------------------------------------------
-
+  
   const ICONS = {
     androidMobile: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>',
     androidTv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
@@ -539,17 +530,7 @@
   };
 
   const PLATFORM_ORDER = ['android-mobile', 'android-tv', 'ios', 'webos', 'tizen'];
-
-  // ---------------------------------------------------------------------
-  // State
-  // ---------------------------------------------------------------------
-
   const state = { platformId: null, methodId: null, stepIndex: 0 };
-
-  // ---------------------------------------------------------------------
-  // Mobile nav toggle (hamburger menu in the header, shown below 600px)
-  // ---------------------------------------------------------------------
-
   function initMobileNav() {
     const navToggle = document.getElementById('navToggle');
     const mobileNav = document.getElementById('mobileNav');
@@ -594,9 +575,6 @@
     if (!p || !p.methods) return null;
     return p.methods.find((m) => m.id === state.methodId) || null;
   }
-  // Platforms/methods whose step list ends with an explicit "open the
-  // app for the first time" step get the account-creation step inserted
-  // right before that final step.
   function currentSteps() {
     const m = currentMethod();
     const p = currentPlatform();
@@ -676,10 +654,6 @@
   function scrollToTop() {
     root.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-
-  // ---------------------------------------------------------------------
-  // Rendering
-  // ---------------------------------------------------------------------
 
   function el(html) {
     const t = document.createElement('template');
