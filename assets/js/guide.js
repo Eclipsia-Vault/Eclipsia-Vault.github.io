@@ -181,7 +181,7 @@
         </div>
         <div class="guide-step">
           <span class="num">3</span>
-          <span class="txt">Choose <code>Developer</code>, accept the terms, and fill in the short application form. For personal use, "Application Name" and "Application URL" can be anything (e.g. <code>Nuvio</code> and a placeholder URL).</span>
+          <span class="txt">Choose <code>Developer</code>, accept the terms, and fill in the short application form. For personal use, "Application Name" and "Application URL" can be anything (e.g. <code>https://nuvio.tv</code></span>
         </div>
         <div class="guide-step">
           <span class="num">4</span>
