@@ -107,7 +107,7 @@
 	let scrapers = [];
 
 	const repoUrl = MANIFEST_URL;
-
+	const repocbUrl = 'https://codeberg.org/eclipsia/eclipsia-nuvio/raw/branch/main/stable/manifest.json';
 	const els = {
 		copyRepoBtn: document.getElementById('copyRepoBtn'),
 		repoCopyText: document.getElementById('repoCopyText'),
@@ -303,7 +303,7 @@
 
 	async function handleCopy(e) {
 		e.preventDefault();
-		const ok = await copyToClipboard(repoUrl);
+		const ok = await copyToClipboard(repocbUrl);
 		if (ok && els.repoCopyText && els.copyRepoBtn) {
 			els.repoCopyText.textContent = '✓ Copied!';
 			els.copyRepoBtn.classList.add('copied');
