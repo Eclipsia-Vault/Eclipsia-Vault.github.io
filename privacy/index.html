@@ -8,8 +8,8 @@
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    style-src 'self' 'unsafe-inline' https://fonts.bunny.net;
-    font-src https://fonts.bunny.net;
+    style-src 'self' 'unsafe-inline';
+    font-src 'self';
     img-src 'self' data:;
     connect-src 'self';
     script-src 'self';
@@ -24,8 +24,6 @@
     <title>Privacy Policy — Eclipsia</title>
     <meta name="description" content="Privacy Policy for Eclipsia — a curated, open-source collection of provider plugins for Nuvio.">
 
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=source-serif-4:500,600|inter:400,500,600,700|jetbrains-mono:400,500,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
@@ -49,7 +47,7 @@
         <main class="wrap">
 
             <section class="hero" id="privacyHero" style="padding-bottom: 0;">
-                <div class="eyebrow">legal · privacy policy <span class="updated">last updated 1 July 2026</span></div>
+                <div class="eyebrow">legal · privacy policy <span class="updated">last updated 8 July 2026</span></div>
                 <h1 class="hero-title">Privacy Policy</h1>
                 <p class="hero-description">
                     This page describes what <strong>Eclipsia</strong> does — and, just as
@@ -65,10 +63,10 @@
                     <p>
                         Eclipsia is an open-source, community-maintained collection of provider plugins ("manifest") for the
                         third-party media application <strong>Nuvio</strong>. This site is hosted as a static website on
-                        <strong>statichost.eu</strong>, a privacy-focused European hosting provider, and is not a company, and
-                        does not operate any backend server of its own. This Privacy Policy explains how information is
-                        handled across every page this site offers: the manifest page (<code>/</code>), the setup guide
-                        (<code>/guide</code>), the account page (<code>/accounts</code>), and this policy page itself.
+                        <strong>GitHub Pages</strong>, and is not a company, and does not operate any backend server of its
+                        own. This Privacy Policy explains how information is handled across every page this site offers: the
+                        manifest page (<code>/</code>), the setup guide (<code>/guide</code>), the account page
+                        (<code>/accounts</code>), and this policy page itself.
                     </p>
                     <p>
                         This policy applies only to this website. It does not apply to the Nuvio application itself, to the
@@ -83,11 +81,11 @@
                     <p>
                         This site does not run analytics, does not set cookies, does not use tracking pixels, and does not
                         include any advertising or third-party marketing scripts. There are no visitor logs, usage metrics,
-                        or behavioral profiles created or stored by Eclipsia — and, as described in Section&nbsp;4, our hosting
-                        provider does not keep server-level logs of visitor IP addresses either. This is enforced technically,
-                        not just promised: the site's Content-Security-Policy header restricts outbound connections to only
-                        what each page needs to function, so no hidden or undisclosed data collection can occur without also
-                        breaking the page.
+                        or behavioral profiles created or stored by Eclipsia. This is enforced technically, not just
+                        promised: the site's Content-Security-Policy restricts outbound connections to only what each page
+                        needs to function, so no hidden or undisclosed data collection can occur without also breaking the
+                        page. Note that GitHub, our hosting provider, does independently log requests to serve the site — see
+                        Section&nbsp;4 for details, as this logging is outside our control.
                     </p>
                     <p>
                         Simply browsing the manifest page, viewing the list of providers, or clicking "Add to Nuvio" does not
@@ -139,15 +137,21 @@
                 <div class="legal-block">
                     <h3>4. Hosting</h3>
                     <p>
-                        This site is hosted by <strong>statichost.eu</strong>, a static-site hosting provider registered in
-                        Sweden and operating entirely on European infrastructure. Unlike many conventional hosts, statichost.eu
-                        does not keep server logs containing personal data: your IP address is used only transiently, in
-                        server memory, for the fraction of a second needed to deliver the page you requested, and is not
-                        written to disk or retained afterward. No visitor analytics are collected on this site's behalf, and
-                        no third-party data processors are used to serve it. All processing takes place within the EU/EEA.
-                        This logging behavior is set by statichost.eu, not by Eclipsia, and is described in further detail in
-                        their own privacy policy at
-                        <a href="https://www.statichost.eu/privacy/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">statichost.eu/privacy</a>.
+                        This site is hosted on <strong>GitHub Pages</strong>, a static-site hosting service operated by
+                        GitHub, Inc. (a subsidiary of Microsoft Corporation), served from GitHub's global CDN
+                        infrastructure. Unlike a self-managed server, Eclipsia has no access to and does not control any
+                        request logs GitHub may generate to operate its infrastructure, detect abuse, or maintain security.
+                        GitHub's handling of that data — including where it is processed and how long it is retained — is
+                        governed by GitHub's own policies, not by Eclipsia, and is described in the
+                        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">GitHub Privacy Statement</a>.
+                    </p>
+                    <p>
+                        Because GitHub Pages does not support custom HTTP response headers, the security policies on this
+                        site (Content-Security-Policy and Permissions-Policy) are delivered via <code>&lt;meta&gt;</code>
+                        tags rather than true response headers. Browsers ignore certain directives, such as
+                        <code>frame-ancestors</code>, when set this way — this is a platform limitation of GitHub Pages, not
+                        a choice made by this project, and it does not affect the data-collection practices described
+                        elsewhere in this policy.
                     </p>
                 </div>
 
@@ -176,7 +180,7 @@
                 <div class="legal-block">
                     <h3>7. Data Security</h3>
                     <p>
-                        All pages on this site are served over HTTPS. A strict Content-Security-Policy limits which domains
+                        All pages on this site are served over HTTPS. A Content-Security-Policy limits which domains
                         any page is even permitted to contact, and a Permissions-Policy header disables access to sensitive
                         browser features such as camera, microphone, and location, none of which this site has any use for.
                         Because this site has no database, no server-side code, and no persistent storage of user data, there
@@ -222,7 +226,7 @@
         <footer class="site-footer">
             <div class="wrap footer-content">
                 <span>Eclipsia • distributed under GPL v3</span>
-                <a class="footer-link" href="https://github.com/NuvioMedia" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">github.com/NuvioMedia</a>
+                <a class="footer-link" href="https://codeberg.org/NuvioMedia" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">codeberg.org/NuvioMedia</a>
             </div>
         </footer>
 

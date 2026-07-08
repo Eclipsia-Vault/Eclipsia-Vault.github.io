@@ -6,15 +6,15 @@
     const MANIFESTS = {
         stable: {
             label: 'Stable',
-            url: 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/stable/manifest.json'
+            url: 'https://codeberg.org/eclipsia/eclipsia-nuvio/raw/branch/main/stable/manifest.json'
         },
         english: {
             label: 'English',
-            url: 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/english/manifest.json'
+            url: 'https://codeberg.org/eclipsia/eclipsia-nuvio/raw/branch/main/english/manifest.json'
         },
         main: {
             label: 'All Providers',
-            url: 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/manifest.json'
+            url: 'https://codeberg.org/eclipsia/eclipsia-nuvio/raw/branch/main/manifest.json'
         }
     };
     const DEFAULT_MANIFEST_KEY = 'stable';

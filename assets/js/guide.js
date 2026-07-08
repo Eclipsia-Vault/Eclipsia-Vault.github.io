@@ -27,7 +27,7 @@
     };
   }
 
-  const NUVIO_MANIFEST_URL = 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/manifest.json';
+  const NUVIO_MANIFEST_URL = 'https://codeberg.org/eclipsia/eclipsia-nuvio/raw/branch/main/manifest.json';
   const NUVIO_PLUGIN_NAME = 'Eclipsia';
   const NUVIO_TOKEN_REFRESH_SKEW_MS = 30 * 1000;
 
@@ -189,7 +189,7 @@
         </div>
         <div class="guide-step">
           <span class="num">5</span>
-          <span class="txt">Open Nuvio, then log-in using your <strong>Nuvio account's email and password</strong> from the previous step. Now Click the profile picture in bottom right corner<div class="path-row"><span class="seg">Settings</span><span class="sep">→</span><span class="seg">Scroll Down to <strong>Integrations</strong></span><span class="sep">→</span><span class="seg">TMDB Enrichment</span></div>Paste and save.</span>
+          <span class="txt">Open Nuvio, then log-in using your <strong>Nuvio account's email and password</strong> from the previous step. Now Click the profile picture in bottom right corner<div class="path-row"><span class="seg">Settings</span><span class="sep">→</span><span class="seg"><strong>Integrations</strong></span><span class="sep">→</span><span class="seg">TMDB Enrichment</span></div>Paste and save.</span>
         </div>
       </div>
       <div class="warning-banner">
