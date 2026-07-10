@@ -23,7 +23,7 @@
     const TOKEN_REFRESH_SKEW_MS = 30 * 1000;
 
     function saveSession(session) {
-        try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(session)); } catch {}
+        try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(session)); } catch { }
     }
     function loadSession() {
         try {
@@ -32,7 +32,7 @@
         } catch { return null; }
     }
     function clearSession() {
-        try { sessionStorage.removeItem(SESSION_KEY); } catch {}
+        try { sessionStorage.removeItem(SESSION_KEY); } catch { }
     }
 
     function sessionFromAuthResponse(json) {
@@ -216,7 +216,7 @@
 
     async function handleSignOut() {
         const token = await ensureFreshToken();
-        if (token) { try { await client.auth.signOut(); } catch {} }
+        if (token) { try { await client.auth.signOut(); } catch { } }
         clearSession();
         if (els.form) els.form.reset();
         setAuthMode('signin');

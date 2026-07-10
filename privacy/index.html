@@ -1,237 +1,309 @@
 <!doctype html>
 <html lang="en" data-scroll-behavior="smooth">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Eclipsia" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
     default-src 'self';
     style-src 'self' 'unsafe-inline';
     font-src 'self';
     img-src 'self' data:;
     connect-src 'self';
     script-src 'self';
-    frame-ancestors 'none';
     base-uri 'self';
     form-action 'none';
-  ">
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
-    <link rel="icon" type="image/png" href="../assets/icon.png">
-    <link rel="apple-touch-icon" href="../assets/logo.png">
+  "
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    />
+    <link rel="icon" type="image/png" href="../assets/icon.png" />
+    <link rel="apple-touch-icon" href="../assets/logo.png" />
 
     <title>Privacy Policy — Eclipsia</title>
-    <meta name="description" content="Privacy Policy for Eclipsia — a curated, open-source collection of provider plugins for Nuvio.">
+    <meta
+      name="description"
+      content="Privacy Policy for Eclipsia — a curated, open-source collection of provider plugins for Nuvio."
+    />
 
-    <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="app-wrapper">
-
-        <header class="site-header">
-            <div class="wrap header-inner">
-                <a class="brand" href="../" style="min-width:0;">
-                    <div class="brand-icon" aria-hidden="true">
-                        <img src="../assets/icon.png" alt="Eclipsia">
-                    </div>
-                    <span class="brand-name">eclipsia<span class="brand-tag">/ privacy</span></span>
-                </a>
-                <div class="header-nav-links">
-                    <a href="../" class="nav-action">← Back to Manifest</a>
-                </div>
+      <header class="site-header">
+        <div class="wrap header-inner">
+          <a class="brand" href="../" style="min-width: 0">
+            <div class="brand-icon" aria-hidden="true">
+              <img src="../assets/logo.png" alt="Eclipsia" />
             </div>
-        </header>
+            <span class="brand-name">eclipsia</span>
+          </a>
+          <div class="header-nav-links">
+            <a href="../" class="nav-action">← Back to Manifest</a>
+          </div>
+        </div>
+      </header>
 
-        <main class="wrap">
+      <main class="wrap">
+        <section class="hero" id="privacyHero" style="padding-bottom: 0">
+          <div class="eyebrow">
+            legal · privacy policy
+            <span class="updated">last updated 1 July 2026</span>
+          </div>
+          <h1 class="hero-title">Privacy Policy</h1>
+          <p class="hero-description">
+            This page describes what <strong>Eclipsia</strong> does — and, just
+            as importantly, does <strong>not</strong> — collect when you visit
+            this site or use the optional account page.
+          </p>
+        </section>
 
-            <section class="hero" id="privacyHero" style="padding-bottom: 0;">
-                <div class="eyebrow">legal · privacy policy <span class="updated">last updated 8 July 2026</span></div>
-                <h1 class="hero-title">Privacy Policy</h1>
-                <p class="hero-description">
-                    This page describes what <strong>Eclipsia</strong> does — and, just as
-                    importantly, does <strong>not</strong> — collect when you visit this site or use the optional
-                    account page.
-                </p>
-            </section>
+        <section
+          id="privacy"
+          class="legal-section"
+          style="border-top: none; padding-top: 1rem"
+        >
+          <div class="legal-block">
+            <h3>1. Who We Are &amp; Scope</h3>
+            <p>
+              Eclipsia is an open-source, community-maintained collection of
+              provider plugins ("manifest") for the third-party media
+              application <strong>Nuvio</strong>. This site is hosted as a
+              static website on <strong>statichost.eu</strong>, a
+              privacy-focused European hosting provider, and is not a company,
+              and does not operate any backend server of its own. This Privacy
+              Policy explains how information is handled across every page this
+              site offers: the manifest page (<code>/</code>), the setup guide
+              (<code>/guide</code>), the account page (<code>/accounts</code>),
+              and this policy page itself.
+            </p>
+            <p>
+              This policy applies only to this website. It does not apply to the
+              Nuvio application itself, to the third-party content sources the
+              plugins connect to, or to any other website you may reach through
+              links found here. Those are covered by their own privacy policies,
+              which we encourage you to read separately.
+            </p>
+          </div>
 
-            <section id="privacy" class="legal-section" style="border-top: none; padding-top: 1rem;">
+          <div class="legal-block">
+            <h3>2. Information We Do Not Collect</h3>
+            <p>
+              This site does not run analytics, does not set cookies, does not
+              use tracking pixels, and does not include any advertising or
+              third-party marketing scripts. There are no visitor logs, usage
+              metrics, or behavioral profiles created or stored by Eclipsia —
+              and, as described in Section&nbsp;4, our hosting provider does not
+              keep server-level logs of visitor IP addresses either. This is
+              enforced technically, not just promised: the site's
+              Content-Security-Policy header restricts outbound connections to
+              only what each page needs to function, so no hidden or undisclosed
+              data collection can occur without also breaking the page.
+            </p>
+            <p>
+              Simply browsing the manifest page, viewing the list of providers,
+              or clicking "Add to Nuvio" does not transmit any personal
+              information to us, because there is no "us" on the receiving end —
+              the link only opens your own Nuvio application.
+            </p>
+          </div>
 
-                <div class="legal-block">
-                    <h3>1. Who We Are &amp; Scope</h3>
-                    <p>
-                        Eclipsia is an open-source, community-maintained collection of provider plugins ("manifest") for the
-                        third-party media application <strong>Nuvio</strong>. This site is hosted as a static website on
-                        <strong>GitHub Pages</strong>, and is not a company, and does not operate any backend server of its
-                        own. This Privacy Policy explains how information is handled across every page this site offers: the
-                        manifest page (<code>/</code>), the setup guide (<code>/guide</code>), the account page
-                        (<code>/accounts</code>), and this policy page itself.
-                    </p>
-                    <p>
-                        This policy applies only to this website. It does not apply to the Nuvio application itself, to the
-                        third-party content sources the plugins connect to, or to any other website you may reach through
-                        links found here. Those are covered by their own privacy policies, which we encourage you to read
-                        separately.
-                    </p>
-                </div>
+          <div class="legal-block">
+            <h3>3. The Account Page (<code>/accounts</code>)</h3>
+            <p>
+              The account page is an optional convenience feature. It lets you
+              sign in with your existing Nuvio account to manage your synced
+              account data directly — for example adding the Eclipsia manifest
+              to your plugin list automatically instead of copying a URL by
+              hand. You never have to use it — the manifest can always be added
+              manually from the homepage instead.
+            </p>
+            <p>
+              If you choose to sign in, the email and password you enter are
+              sent directly, over HTTPS, to Nuvio's own authentication backend.
+              This site is a static page with no server component of its own; it
+              cannot log, intercept, or store your credentials, and does not
+              attempt to. We are not the operator of that backend and do not
+              control how Nuvio itself handles, stores, or secures your account
+              data — for that, please refer to
+              <a
+                href="https://nuvio.tv/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                referrerpolicy="no-referrer"
+                >Nuvio's own privacy policy</a
+              >
+              and terms.
+            </p>
+            <p>
+              Once signed in, the session token issued to you is kept only in
+              your browser's
+              <code>sessionStorage</code>, scoped to that single tab. It is
+              never written to a cookie, never sent to any server other than
+              Nuvio's, and is automatically discarded when you close the tab.
+            </p>
+            <p>
+              Beyond the plugin list, the account page also lets you view and
+              manage other parts of your own Nuvio account for whichever profile
+              you actively select, including addons, library items, watch
+              progress, watch history, profile settings, home catalog settings,
+              collections, and the profiles themselves (including renaming,
+              recoloring, or deleting a profile and all of its associated data).
+              Every action is initiated explicitly by you and is scoped only to
+              the resource you choose to view or edit — nothing is read or
+              changed automatically in the background. No billing details are
+              ever accessed, as the public API this page uses does not expose
+              them. Some actions, such as deleting a profile or removing an item
+              from a "full replace" list (addons, plugins, library, profiles,
+              collections), are destructive and cannot be undone through this
+              page.
+            </p>
+            <p>
+              The setup guide (<code>/guide</code>) offers the same optional
+              Nuvio sign-in as a shortcut during the TMDB integration step, so
+              you can add Eclipsia to your plugin list without leaving the
+              guide. It follows the exact same handling described above:
+              credentials go straight to Nuvio's own backend over HTTPS, the
+              session token is kept only in <code>sessionStorage</code> for that
+              tab, and only the plugin list for the profile you select is read
+              or modified from that page.
+            </p>
+          </div>
 
-                <div class="legal-block">
-                    <h3>2. Information We Do Not Collect</h3>
-                    <p>
-                        This site does not run analytics, does not set cookies, does not use tracking pixels, and does not
-                        include any advertising or third-party marketing scripts. There are no visitor logs, usage metrics,
-                        or behavioral profiles created or stored by Eclipsia. This is enforced technically, not just
-                        promised: the site's Content-Security-Policy restricts outbound connections to only what each page
-                        needs to function, so no hidden or undisclosed data collection can occur without also breaking the
-                        page. Note that GitHub, our hosting provider, does independently log requests to serve the site — see
-                        Section&nbsp;4 for details, as this logging is outside our control.
-                    </p>
-                    <p>
-                        Simply browsing the manifest page, viewing the list of providers, or clicking "Add to Nuvio" does not
-                        transmit any personal information to us, because there is no "us" on the receiving end — the link
-                        only opens your own Nuvio application.
-                    </p>
-                </div>
+          <div class="legal-block">
+            <h3>4. Hosting</h3>
+            <p>
+              This site is hosted by <strong>statichost.eu</strong>, a
+              static-site hosting provider registered in Sweden and operating
+              entirely on European infrastructure. Unlike many conventional
+              hosts, statichost.eu does not keep server logs containing personal
+              data: your IP address is used only transiently, in server memory,
+              for the fraction of a second needed to deliver the page you
+              requested, and is not written to disk or retained afterward. No
+              visitor analytics are collected on this site's behalf, and no
+              third-party data processors are used to serve it. All processing
+              takes place within the EU/EEA. This logging behavior is set by
+              statichost.eu, not by Eclipsia, and is described in further detail
+              in their own privacy policy at
+              <a
+                href="https://www.statichost.eu/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                referrerpolicy="no-referrer"
+                >statichost.eu/privacy</a
+              >.
+            </p>
+          </div>
 
-                <div class="legal-block">
-                    <h3>3. The Account Page (<code>/accounts</code>)</h3>
-                    <p>
-                        The account page is an optional convenience feature. It lets you sign in with your existing Nuvio
-                        account to manage your synced account data directly — for example adding the Eclipsia manifest to
-                        your plugin list automatically instead of copying a URL by hand. You never have to use it — the
-                        manifest can always be added manually from the homepage instead.
-                    </p>
-                    <p>
-                        If you choose to sign in, the email and password you enter are sent directly, over HTTPS, to Nuvio's
-                        own authentication backend. This site is a static page with no server component of its own; it
-                        cannot log, intercept, or store your credentials, and does not attempt to. We are not the operator of
-                        that backend and do not control how Nuvio itself handles, stores, or secures your account data — for
-                        that, please refer to <a href="https://nuvio.tv/privacy-policy" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Nuvio's own privacy policy</a> and terms.
-                    </p>
-                    <p>
-                        Once signed in, the session token issued to you is kept only in your browser's
-                        <code>sessionStorage</code>, scoped to that single tab. It is never written to a cookie, never sent to
-                        any server other than Nuvio's, and is automatically discarded when you close the tab.
-                    </p>
-                    <p>
-                        Beyond the plugin list, the account page also lets you view and manage other parts of your own
-                        Nuvio account for whichever profile you actively select, including addons, library items, watch
-                        progress, watch history, profile settings, home catalog settings, collections, and the profiles
-                        themselves (including renaming, recoloring, or deleting a profile and all of its associated data).
-                        Every action is initiated explicitly by you and is scoped only to the resource you choose to view or
-                        edit — nothing is read or changed automatically in the background. No billing details are ever
-                        accessed, as the public API this page uses does not expose them. Some actions, such as deleting a
-                        profile or removing an item from a "full replace" list (addons, plugins, library, profiles,
-                        collections), are destructive and cannot be undone through this page.
-                    </p>
-                    <p>
-                        The setup guide (<code>/guide</code>) offers the same optional Nuvio sign-in as a shortcut during
-                        the TMDB integration step, so you can add Eclipsia to your plugin list without leaving the guide.
-                        It follows the exact same handling described above: credentials go straight to Nuvio's own backend
-                        over HTTPS, the session token is kept only in <code>sessionStorage</code> for that tab, and only the
-                        plugin list for the profile you select is read or modified from that page.
-                    </p>
-                </div>
+          <div class="legal-block">
+            <h3>5. Third-Party Content &amp; Links</h3>
+            <p>
+              The plugins listed in the manifest retrieve video files and
+              metadata from third-party websites and file hosts that are
+              entirely independent of this project. This site also links out to
+              services such as TMDB, Codeberg, and the official Nuvio release
+              pages. We have no visibility into, and no responsibility for, the
+              privacy practices of any of these third parties. Any interaction
+              with them is governed by their own respective policies.
+            </p>
+          </div>
 
-                <div class="legal-block">
-                    <h3>4. Hosting</h3>
-                    <p>
-                        This site is hosted on <strong>GitHub Pages</strong>, a static-site hosting service operated by
-                        GitHub, Inc. (a subsidiary of Microsoft Corporation), served from GitHub's global CDN
-                        infrastructure. Unlike a self-managed server, Eclipsia has no access to and does not control any
-                        request logs GitHub may generate to operate its infrastructure, detect abuse, or maintain security.
-                        GitHub's handling of that data — including where it is processed and how long it is retained — is
-                        governed by GitHub's own policies, not by Eclipsia, and is described in the
-                        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">GitHub Privacy Statement</a>.
-                    </p>
-                    <p>
-                        Because GitHub Pages does not support custom HTTP response headers, the security policies on this
-                        site (Content-Security-Policy and Permissions-Policy) are delivered via <code>&lt;meta&gt;</code>
-                        tags rather than true response headers. Browsers ignore certain directives, such as
-                        <code>frame-ancestors</code>, when set this way — this is a platform limitation of GitHub Pages, not
-                        a choice made by this project, and it does not affect the data-collection practices described
-                        elsewhere in this policy.
-                    </p>
-                </div>
+          <div class="legal-block">
+            <h3>6. Children's Privacy</h3>
+            <p>
+              This site is not directed at children, and we do not knowingly
+              collect personal information from anyone, of any age, since — as
+              described above — this site does not collect personal information
+              as a general matter. If you believe a child has provided personal
+              information through the account page to Nuvio's backend directly,
+              please contact Nuvio, as that data does not pass through or reside
+              with this project.
+            </p>
+          </div>
 
-                <div class="legal-block">
-                    <h3>5. Third-Party Content &amp; Links</h3>
-                    <p>
-                        The plugins listed in the manifest retrieve video files and metadata from third-party websites and
-                        file hosts that are entirely independent of this project. This site also links out to services such
-                        as TMDB, GitHub, and the official Nuvio release pages. We have no visibility into, and no
-                        responsibility for, the privacy practices of any of these third parties. Any interaction with them is
-                        governed by their own respective policies.
-                    </p>
-                </div>
+          <div class="legal-block">
+            <h3>7. Data Security</h3>
+            <p>
+              All pages on this site are served over HTTPS. A strict
+              Content-Security-Policy limits which domains any page is even
+              permitted to contact, and a Permissions-Policy header disables
+              access to sensitive browser features such as camera, microphone,
+              and location, none of which this site has any use for. Because
+              this site has no database, no server-side code, and no persistent
+              storage of user data, there is no central store of personal
+              information here that could be breached.
+            </p>
+          </div>
 
-                <div class="legal-block">
-                    <h3>6. Children's Privacy</h3>
-                    <p>
-                        This site is not directed at children, and we do not knowingly collect personal information from
-                        anyone, of any age, since — as described above — this site does not collect personal information as
-                        a general matter. If you believe a child has provided personal information through the account page
-                        to Nuvio's backend directly, please contact Nuvio, as that data does not pass through or reside with
-                        this project.
-                    </p>
-                </div>
+          <div class="legal-block">
+            <h3>8. Your Choices</h3>
+            <p>
+              You can use this site's core functionality, browsing and adding
+              the manifest, without ever visiting the account page or providing
+              any personal information. If you have used the account page, you
+              can end your session at any time using the "Sign out" control, or
+              simply by closing the browser tab, which clears the locally held
+              session token. For anything relating to your Nuvio account itself
+              (data access, correction, or deletion requests), please contact
+              Nuvio directly, as they are the party that holds that data.
+            </p>
+          </div>
 
-                <div class="legal-block">
-                    <h3>7. Data Security</h3>
-                    <p>
-                        All pages on this site are served over HTTPS. A Content-Security-Policy limits which domains
-                        any page is even permitted to contact, and a Permissions-Policy header disables access to sensitive
-                        browser features such as camera, microphone, and location, none of which this site has any use for.
-                        Because this site has no database, no server-side code, and no persistent storage of user data, there
-                        is no central store of personal information here that could be breached.
-                    </p>
-                </div>
+          <div class="legal-block">
+            <h3>9. Changes to This Policy</h3>
+            <p>
+              This policy may be updated from time to time to reflect changes to
+              the site or applicable legal requirements. Updates will be posted
+              on this page along with a revised "last updated" date. Since this
+              is a static, open-source site, the history of any changes to this
+              document is also visible in the project's public Codeberg commit
+              history.
+            </p>
+          </div>
 
-                <div class="legal-block">
-                    <h3>8. Your Choices</h3>
-                    <p>
-                        You can use this site's core functionality, browsing and adding the manifest, without ever visiting
-                        the account page or providing any personal information. If you have used the account page, you can
-                        end your session at any time using the "Sign out" control, or simply by closing the browser tab,
-                        which clears the locally held session token. For anything relating to your Nuvio account itself
-                        (data access, correction, or deletion requests), please contact Nuvio directly, as they are the party
-                        that holds that data.
-                    </p>
-                </div>
+          <div class="legal-block">
+            <h3>10. Contact</h3>
+            <p>
+              This project is maintained by an open-source community rather than
+              a registered company. Questions about this policy, or about the
+              project generally, are best directed to the maintainers through
+              the issue tracker of the public Codeberg repository linked from
+              the homepage.
+            </p>
+          </div>
+        </section>
+      </main>
 
-                <div class="legal-block">
-                    <h3>9. Changes to This Policy</h3>
-                    <p>
-                        This policy may be updated from time to time to reflect changes to the site or applicable legal
-                        requirements. Updates will be posted on this page along with a revised "last updated" date. Since
-                        this is a static, open-source site, the history of any changes to this document is also visible in
-                        the project's public GitHub commit history.
-                    </p>
-                </div>
-
-                <div class="legal-block">
-                    <h3>10. Contact</h3>
-                    <p>
-                        This project is maintained by an open-source community rather than a registered company. Questions
-                        about this policy, or about the project generally, are best directed to the maintainers through the
-                        issue tracker of the public GitHub repository linked from the homepage.
-                    </p>
-                </div>
-
-            </section>
-
-        </main>
-
-        <footer class="site-footer">
-            <div class="wrap footer-content">
-                <span>Eclipsia • distributed under GPL v3</span>
-                <a class="footer-link" href="https://codeberg.org/NuvioMedia" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">codeberg.org/NuvioMedia</a>
-            </div>
-        </footer>
-
+      <footer class="site-footer">
+        <div class="wrap footer-content">
+          <span>Eclipsia • distributed under GPL v3</span>
+          <a
+            class="footer-link"
+            href="https://github.com/NuvioMedia"
+            target="_blank"
+            rel="noopener noreferrer"
+            referrerpolicy="no-referrer"
+            >github.com/NuvioMedia</a
+          >
+        </div>
+      </footer>
     </div>
-
-</body>
-
+  </body>
 </html>

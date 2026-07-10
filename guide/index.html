@@ -1,94 +1,177 @@
 <!doctype html>
 <html lang="en" data-scroll-behavior="smooth">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Eclipsia" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
     default-src 'self';
     style-src 'self' 'unsafe-inline';
     font-src 'self';
     img-src 'self' data:;
     connect-src 'self' https://api.nuvio.tv;
     script-src 'self';
-    frame-ancestors 'none';
     base-uri 'self';
     form-action 'none';
-  ">
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
-    <link rel="icon" type="image/png" href="../assets/icon.png">
-    <link rel="apple-touch-icon" href="../assets/logo.png">
+  "
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    />
+    <link rel="icon" type="image/png" href="../assets/icon.png" />
+    <link rel="apple-touch-icon" href="../assets/logo.png" />
 
     <title>Setup Guide — Eclipsia</title>
-    <meta name="description" content="A step-by-step, beginner-friendly setup wizard for installing Nuvio on Android, iOS, and TV platforms.">
+    <meta
+      name="description"
+      content="A step-by-step, beginner-friendly setup wizard for installing Nuvio on Android, iOS, and TV platforms."
+    />
 
-    <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="app-wrapper">
-
-        <header class="site-header">
-            <div class="wrap header-inner">
-                <a class="brand" href="../" style="min-width:0;">
-                    <div class="brand-icon" aria-hidden="true">
-                        <img src="../assets/icon.png" alt="Eclipsia">
-                    </div>
-                    <span class="brand-name">eclipsia<span class="brand-tag">/ guide</span></span>
-                </a>
-                
-                <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle navigation menu">
-                    <svg class="nav-toggle-icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                    <svg class="nav-toggle-icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
+      <header class="site-header">
+        <div class="wrap header-inner">
+          <a class="brand" href="../" style="min-width: 0">
+            <div class="brand-icon" aria-hidden="true">
+              <img src="../assets/logo.png" alt="Eclipsia" />
             </div>
-            <div class="mobile-nav" id="mobileNav">
-                <a href="../" class="mobile-nav-link">← Back to Manifest</a>
-                <a href="../accounts/" class="mobile-nav-link">Account</a>
-            </div>
-        </header>
+            <span class="brand-name">eclipsia</span>
+          </a>
+        <div class="header-nav-links header-nav-links--persist">
+            <a href="../" class="nav-action nav-action--back">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M19 12H5" />
+                <path d="M12 19l-7-7 7-7" />
+              </svg>
+              <span class="nav-action-label">Back to Manifest</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-        <main class="wrap">
+      <main class="wrap">
+        <section class="hero guide-hero" id="guideHero">
+          <span class="eyebrow">beginner friendly</span>
+          <h1 class="hero-title">Setup Guide</h1>
+          <p class="hero-description">
+            Pick your device below and we'll walk you through installing
+            <strong>Nuvio</strong>
+            one step at a time — It’s super easy.
+          </p>
+        </section>
 
-            <section class="hero guide-hero" id="guideHero">
-                <div class="eyebrow">step-by-step · beginner friendly</div>
-                <h1 class="hero-title">Setup Guide</h1>
-                <p class="hero-description">
-                    Pick your device below and we'll walk you through installing <strong>Nuvio</strong>
-                    one step at a time — It’s super easy.
-                </p>
-            </section>
+        <section class="install-container" id="wizardSection">
+          <div class="install-titlebar">
+            <span class="install-titlebar-label" id="installTitlebarLabel"
+              >setup wizard</span
+            >
+          </div>
+          <div class="install-body">
+            <div id="wizardRoot"></div>
+          </div>
+        </section>
 
-            <section class="install-container" id="wizardSection">
-                <div class="install-titlebar">
-                    <div class="titlebar-dots"><span></span><span></span><span></span></div>
-                    <span class="install-titlebar-label">setup wizard</span>
-                </div>
-                <div class="install-body">
-                    <div id="wizardRoot"></div>
-                </div>
-            </section>
+        <div class="guide-footnote-box">
+          <p id="guideFootnoteText">
+            Already have Nuvio installed?
+            <a href="../#install">Jump straight to adding Eclipsia's plugins</a
+            >.
+          </p>
+        </div>
+      </main>
 
-            <div class="guide-footnote-box">
-                <p id="guideFootnoteText">Already have Nuvio installed? <a href="../#install">Jump straight to adding Eclipsia's plugins</a>.</p>
-            </div>
+      <footer class="site-footer">
+        <div class="wrap footer-content">
+          <span>Eclipsia • distributed under GPL v3</span>
+          <a class="footer-link" href="../privacy/">Privacy Policy</a>
+          <a
+            class="footer-link"
+            href="https://github.com/NuvioMedia"
+            target="_blank"
+            rel="noopener noreferrer"
+            referrerpolicy="no-referrer"
+            >github.com/NuvioMedia</a
+          >
+        </div>
+      </footer>
 
-        </main>
-
-        <footer class="site-footer">
-            <div class="wrap footer-content">
-                <span>Eclipsia • distributed under GPL v3</span>
-                <a class="footer-link" href="../privacy/">Privacy Policy</a>
-                <a class="footer-link" href="https://github.com/NuvioMedia" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">github.com/NuvioMedia</a>
-            </div>
-        </footer>
-
+      <nav class="mobile-tabbar" id="mobileTabbar" aria-label="Primary">
+        <a class="tabbar-item" href="../">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"
+            />
+          </svg>
+          <span>Home</span>
+        </a>
+        <a class="tabbar-item" href="./">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path
+              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"
+            />
+          </svg>
+          <span>Guide</span>
+        </a>
+        <a class="tabbar-item" href="../accounts/">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5" />
+          </svg>
+          <span>Account</span>
+        </a>
+      </nav>
     </div>
 
     <script src="../assets/js/guide.js" defer></script>
-
-</body>
-
+    <script src="../assets/js/mobile-app.js" defer></script>
+  </body>
 </html>

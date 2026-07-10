@@ -144,7 +144,7 @@
             <label class="form-label" for="guideAuthPassword">Password</label>
             <input class="form-input" type="password" id="guideAuthPassword" name="password" placeholder="••••••••" autocomplete="new-password" minlength="6" required>
           </div>
-          <button class="btn btn-primary" type="submit" id="guideAuthSubmitBtn">Create Account</button>
+          <button class="btn btn-account" type="submit" id="guideAuthSubmitBtn">Create Account</button>
         </form>
         <p class="sync-status" id="guideAuthStatus"></p>
       </div>
@@ -158,7 +158,7 @@
           <select class="form-input" id="guideProfileSelect"></select>
         </div>
         <div class="action-buttons">
-          <button class="btn btn-primary" id="guideAddPluginBtn" type="button">Add Eclipsia to This Profile</button>
+          <button class="btn btn-account" id="guideAddPluginBtn" type="button">Add Eclipsia to This Profile</button>
         </div>
         <p class="sync-status" id="guidePluginStatus"></p>
       </div>
@@ -400,13 +400,13 @@
       }
     })();
   }
-  
+
   const ICONS = {
-    androidMobile: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>',
-    androidTv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
-    ios: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',
-    webos: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>',
-    tizen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>'
+    androidMobile: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="1.75" width="11" height="20.5" rx="2.4"/><path d="M6.5 4.75h11" stroke-width="1.3"/><path d="M6.5 18.5h11" stroke-width="1.3"/><circle cx="12" cy="20.4" r="0.9" fill="currentColor" stroke="none"/><path d="M9.3 3.1h5.4" stroke-width="1.3"/></svg>',
+    androidTv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="4.5" width="21" height="13" rx="1.6"/><path d="M8 21h8" stroke-width="1.4"/><path d="M12 17.5v3.5" stroke-width="1.4"/><path d="M17 1.5l-2.4 3" stroke-width="1.4"/><path d="M7 1.5l2.4 3" stroke-width="1.4"/><polygon points="9.8,8.3 15.2,10.9 9.8,13.5" fill="currentColor" stroke="none"/></svg>',
+    ios: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="1.75" width="12" height="20.5" rx="3"/><rect x="9.4" y="3.35" width="5.2" height="1.15" rx="0.55" fill="currentColor" stroke="none"/><circle cx="12" cy="19.6" r="1.15"/></svg>',
+    webos: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3" width="21" height="13.5" rx="1.4"/><path d="M9.5 20h5" stroke-width="1.4"/><path d="M12 16.5v3.5" stroke-width="1.4"/><circle cx="7" cy="9.75" r="1.6"/><circle cx="12" cy="9.75" r="1.6"/><circle cx="17" cy="9.75" r="1.6" fill="currentColor" stroke="none"/></svg>',
+    tizen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3" width="21" height="13.5" rx="1.4"/><path d="M9.5 20h5" stroke-width="1.4"/><path d="M12 16.5v3.5" stroke-width="1.4"/><path d="M6.2 12.2c1.3-2.6 3.4-3.9 5.8-3.9s4.5 1.3 5.8 3.9" stroke-width="1.5"/><circle cx="12" cy="12.2" r="1" fill="currentColor" stroke="none"/></svg>'
   };
 
   const step = (title, html) => ({ title, html });
@@ -782,11 +782,11 @@
             Back
           </button>
           ${isLast
-            ? `<a class="btn" href="https://t.me/eclipsia_nuvio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
+        ? `<a class="btn" href="https://t.me/eclipsia_nuvio" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                  Join Telegram
                </a>`
-            : `<button class="btn btn-primary" type="button" data-next>
+        : `<button class="btn btn-primary" type="button" data-next>
                  Next
                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                </button>`}
@@ -832,6 +832,19 @@
     el.innerHTML = showFinal ? FOOTNOTE_FINAL_HTML : FOOTNOTE_DEFAULT_HTML;
   }
 
+  function updateTitlebar() {
+    const el = document.getElementById('installTitlebarLabel');
+    if (!el) return;
+    const sep = '<span class="path-sep">/</span>';
+    const parts = ['setup'];
+    const p = currentPlatform();
+    if (p) parts.push(p.label.toLowerCase().replace(/\s+/g, '-'));
+    const m = p && !p.external ? currentMethod() : null;
+    if (m) parts.push(m.label.toLowerCase().replace(/\s+/g, '-'));
+    const last = parts.pop();
+    el.innerHTML = parts.map((s) => s).join(sep) + (parts.length ? sep : '') + `<span class="path-current">${last}</span>`;
+  }
+
   function render() {
     root.innerHTML = '';
     let node;
@@ -852,6 +865,7 @@
     }
     root.appendChild(node);
     updateFootnote(onLastStep);
+    updateTitlebar();
   }
 
   render();

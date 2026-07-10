@@ -1,316 +1,724 @@
 <!doctype html>
 <html lang="en" data-scroll-behavior="smooth">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Eclipsia" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
     default-src 'self';
     style-src 'self' 'unsafe-inline';
     font-src 'self';
     img-src 'self' data:;
     connect-src 'self' https://api.nuvio.tv;
     script-src 'self';
-    frame-ancestors 'none';
     base-uri 'self';
     form-action 'none';
-  ">
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
-    <meta name="robots" content="noindex">
-    <link rel="icon" type="image/png" href="../assets/icon.png">
-    <link rel="apple-touch-icon" href="../assets/logo.png">
+  "
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="../assets/icon.png" />
+    <link rel="apple-touch-icon" href="../assets/logo.png" />
 
     <title>Account — Eclipsia</title>
-    <meta name="description" content="Manage your Nuvio account">
+    <meta name="description" content="Manage your Nuvio account" />
 
-    <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="app-wrapper">
-
-        <header class="site-header">
-            <div class="wrap header-inner">
-                <a class="brand" href="../" style="min-width:0;">
-                    <div class="brand-icon" aria-hidden="true">
-                        <img src="../assets/icon.png" alt="Eclipsia">
-                    </div>
-                    <span class="brand-name">eclipsia<span class="brand-tag">/ account</span></span>
-                </a>
-                <div class="header-nav-links header-nav-links--persist">
-                    <a href="../" class="nav-action nav-action--back">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-                        <span class="nav-action-label">Back to Manifest</span>
-                    </a>
-                </div>
+      <header class="site-header">
+        <div class="wrap header-inner">
+          <a class="brand" href="../" style="min-width: 0">
+            <div class="brand-icon" aria-hidden="true">
+              <img src="../assets/logo.png" alt="Eclipsia" />
             </div>
-        </header>
+            <span class="brand-name"
+              >eclipsia<span class="brand-tag">/ account</span></span
+            >
+          </a>
+          <div class="header-nav-links header-nav-links--persist">
+            <a href="../" class="nav-action nav-action--back">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M19 12H5" />
+                <path d="M12 19l-7-7 7-7" />
+              </svg>
+              <span class="nav-action-label">Back to Manifest</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-        <main class="wrap">
+      <main class="wrap">
+        <section class="account-section" style="padding-top: 2.5rem">
+          <div class="section-head">
+            <h2>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              Manage Your Nuvio Account
+            </h2>
+          </div>
 
-            <section class="account-section" style="padding-top: 2.5rem;">
-                <div class="section-head">
-                    <h2>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                            <circle cx="12" cy="7" r="4" />
-                        </svg>
-                        Manage Your Nuvio Account
-                    </h2>
-                </div>
-
-                <div class="install-container" id="accountCard">
-                    <div class="install-titlebar">
-                        <div class="titlebar-dots"><span></span><span></span><span></span></div>
-                        <span class="install-titlebar-label">nuvio account sync</span>
-                    </div>
-
-                    <div class="install-body">
-                        <p class="hero-description" style="margin-bottom: 1.25rem;">
-                            Sign in to your <strong>Nuvio</strong> account to add Eclipsia and manage synced account.
-                        </p>
-
-                        <div class="warning-banner banner-neutral">
-                            <span class="mark">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                            </span>
-                            <div class="banner-body">
-                                <p align=justify>This is not an official Nuvio page. Your email and password are sent directly to Nuvio's own backend over HTTPS — this page never stores your password. Everything below talks directly to your Nuvio account's public API using your own session token.</p>
-                            </div>
-                        </div>
-
-                        <details class="manual-toggle" id="signinPrivacyNote">
-                            <summary>
-                                <span class="summary-label">
-                                    <svg class="summary-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    What happens when you sign in here
-                                </span>
-                                <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6 9 12 15 18 9"/>
-                                </svg>
-                            </summary>
-                            <div class="manual-toggle-body">
-                                <div class="privacy-note-block">
-                                    <ul>
-                                        <li><strong>Your credentials go straight to Nuvio's Servers</strong> over HTTPS — they never pass through or get logged by this site itself.</li>
-                                        <li><strong>Your session token is kept in this browser tab only</strong> (sessionStorage, not localStorage), so it's cleared automatically when you close the tab.</li>
-                                        <li><strong>Every action below is scoped to your own account</strong> and only touches the resource you explicitly edit (a single profile's plugins, a single profile's library, etc.).</li>
-                                        <li><strong>Full-replace actions are labeled clearly.</strong> Addons, plugins, library, profiles, and collections use "full replace" sync — removing something from a list and saving deletes it from your account. Watch progress and watch history use non-destructive merge, so pushes never delete existing entries; use the explicit Delete button for those.</li>
-                                        <li><strong>No analytics or tracking scripts run on this page</strong> — the site's Content-Security-Policy only allows requests to Nuvio's backend and nowhere else.</li>
-                                        <li>Prefer not to enter your password on a third-party page? You can always add the plugin manually from the <a href="../#install" style="color: var(--ink-secondary); border-bottom: 1px dashed var(--line-hover);">homepage install guide</a> instead — no account needed.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </details>
-
-                        <!-- Signed-out state: sign in / sign up -->
-                        <div id="authSignedOut">
-                            <div class="filter-bar auth-tabs" id="authTabs" role="group" aria-label="Choose sign in or create account">
-                                <button class="filter-chip active" data-auth-tab="signin" type="button">Sign In</button>
-                                <button class="filter-chip" data-auth-tab="signup" type="button">Create Account</button>
-                            </div>
-
-                            <form class="account-form" id="authForm" novalidate>
-                                <div class="form-field">
-                                    <label class="form-label" for="authEmail">Email</label>
-                                    <input class="form-input" type="email" id="authEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
-                                </div>
-                                <div class="form-field">
-                                    <label class="form-label" for="authPassword">Password</label>
-                                    <input class="form-input" type="password" id="authPassword" name="password" placeholder="••••••••" autocomplete="current-password" minlength="6" required>
-                                </div>
-                                <button class="btn btn-primary" type="submit" id="authSubmitBtn">Sign In</button>
-                            </form>
-
-                            <p class="sync-status" id="authStatus"></p>
-                        </div>
-
-                        <!-- Signed-in state: full account manager -->
-                        <div id="authSignedIn" style="display: none;">
-                            <div class="account-user-row">
-                                <span class="who" id="authWhoami"></span>
-                                <button class="link-btn" id="signOutBtn" type="button">Sign out</button>
-                            </div>
-
-                            <div class="guide-note" style="margin-bottom: 1.25rem;">
-                                For full account settings —
-                                 password/email changes, full profile settings, and more —
-                                visit <a href="https://nuvio.tv/account/login" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" style="color: var(--accent-ok)"><strong>nuvio.tv/account/login</strong></a> directly on Nuvio's own site.
-                            </div>
-
-                            <div class="form-field" style="margin-bottom: 1.25rem;">
-                                <label class="form-label" for="profileSelect">Active profile</label>
-                                <select class="form-input" id="profileSelect"></select>
-                            </div>
-
-                            <div class="filter-bar panel-nav" id="panelNav" role="tablist" aria-label="Account sections">
-                                <button class="filter-chip active" data-panel="plugins" type="button">Plugins</button>
-                                <button class="filter-chip" data-panel="addons" type="button">Addons</button>
-                                <button class="filter-chip" data-panel="library" type="button">Library</button>
-                                <button class="filter-chip" data-panel="progress" type="button">Watch Progress</button>
-                                <button class="filter-chip" data-panel="history" type="button">Watch History</button>
-                                <button class="filter-chip" data-panel="settings" type="button">Settings</button>
-                                <button class="filter-chip" data-panel="homeCatalog" type="button">Home Catalog</button>
-                                <button class="filter-chip" data-panel="collections" type="button">Collections</button>
-                                <button class="filter-chip" data-panel="profileManager" type="button">Profiles</button>
-                                <button class="filter-chip" data-panel="dashboard" type="button">Dashboard</button>
-                            </div>
-
-                            <select class="form-input panel-nav-select" id="panelNavSelect" aria-label="Account sections">
-                                <option value="plugins" selected>Plugins</option>
-                                <option value="addons">Addons</option>
-                                <option value="library">Library</option>
-                                <option value="progress">Watch Progress</option>
-                                <option value="history">Watch History</option>
-                                <option value="settings">Settings</option>
-                                <option value="homeCatalog">Home Catalog</option>
-                                <option value="collections">Collections</option>
-                                <option value="profileManager">Profiles</option>
-                                <option value="dashboard">Dashboard</option>
-                            </select>
-
-                            <div id="panels">
-
-                                <!-- Plugins -->
-                                <div class="panel" data-panel="plugins">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">Content source plugins for the active profile. Full replace — removing a row and saving deletes it from your account.</p>
-                                    </div>
-                                    <div class="action-buttons" style="margin-bottom:1rem;">
-                                        <button class="btn btn-primary" id="quickAddEclipsiaBtn" type="button">Add Eclipsia to This Profile</button>
-                                        <select class="form-input quick-add-select" id="quickAddManifestSelect" aria-label="Eclipsia manifest variant">
-                                            <option value="stable" selected>Stable</option>
-                                            <option value="english">English</option>
-                                            <option value="main">Main</option>
-                                        </select>
-                                    </div>
-                                    <div class="resource-list" id="pluginsList"></div>
-                                    <p class="sync-status" id="pluginsStatus"></p>
-                                </div>
-
-                                <!-- Addons -->
-                                <div class="panel" data-panel="addons" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">Catalog / metadata / subtitle / playback addons for the active profile. Full replace.</p>
-                                    </div>
-                                    <div class="action-buttons" style="margin-bottom:1rem;">
-                                        <button class="btn btn-primary" id="addAddonBtn" type="button">Add Addon…</button>
-                                    </div>
-                                    <div class="resource-list" id="addonsList"></div>
-                                    <p class="sync-status" id="addonsStatus"></p>
-                                </div>
-
-                                <!-- Library -->
-                                <div class="panel" data-panel="library" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">Saved / favorited titles for the active profile. Full replace.</p>
-                                    </div>
-                                    <div class="resource-list" id="libraryList"></div>
-                                    <p class="sync-status" id="libraryStatus"></p>
-                                </div>
-
-                                <!-- Watch Progress -->
-                                <div class="panel" data-panel="progress" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">"Continue watching" entries for the active profile. Non-destructive merge on push — use Delete to remove an entry.</p>
-                                    </div>
-                                    <div class="resource-list" id="progressList"></div>
-                                    <p class="sync-status" id="progressStatus"></p>
-                                </div>
-
-                                <!-- Watch History -->
-                                <div class="panel" data-panel="history" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">Playback history for the active profile. Non-destructive merge on push — use Delete to remove an entry.</p>
-                                    </div>
-                                    <div class="resource-list" id="historyList"></div>
-                                    <p class="sync-status" id="historyStatus"></p>
-                                </div>
-
-                                <!-- Profile Settings -->
-                                <div class="panel" data-panel="settings" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">Raw settings blob (theme, player quality, subtitle language, autoplay, etc.) for the active profile on the "tv" platform namespace. Edit the JSON directly — saving fully replaces this blob.</p>
-                                    </div>
-                                    <textarea class="form-input json-editor" id="settingsJson" rows="10" spellcheck="false"></textarea>
-                                    <div class="action-buttons" style="margin-top:0.75rem;">
-                                        <button class="btn btn-primary" id="settingsSaveBtn" type="button">Save</button>
-                                        <button class="btn" id="settingsReloadBtn" type="button">Reload</button>
-                                    </div>
-                                    <p class="sync-status" id="settingsStatus"></p>
-                                </div>
-
-                                <!-- Home Catalog Settings -->
-                                <div class="panel" data-panel="homeCatalog" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">Home screen layout / hidden catalogs for the active profile on the "tv" platform namespace. Saving fully replaces this blob.</p>
-                                    </div>
-                                    <textarea class="form-input json-editor" id="homeCatalogJson" rows="10" spellcheck="false"></textarea>
-                                    <div class="action-buttons" style="margin-top:0.75rem;">
-                                        <button class="btn btn-primary" id="homeCatalogSaveBtn" type="button">Save</button>
-                                        <button class="btn" id="homeCatalogReloadBtn" type="button">Reload</button>
-                                    </div>
-                                    <p class="sync-status" id="homeCatalogStatus"></p>
-                                </div>
-
-                                <!-- Collections -->
-                                <div class="panel" data-panel="collections" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">Curated collections / folders for the active profile. Saving fully replaces the collections list — push an empty array to clear it.</p>
-                                    </div>
-                                    <textarea class="form-input json-editor" id="collectionsJson" rows="10" spellcheck="false"></textarea>
-                                    <div class="action-buttons" style="margin-top:0.75rem;">
-                                        <button class="btn btn-primary" id="collectionsSaveBtn" type="button">Save</button>
-                                        <button class="btn" id="collectionsReloadBtn" type="button">Reload</button>
-                                    </div>
-                                    <p class="sync-status" id="collectionsStatus"></p>
-                                </div>
-
-                                <!-- Profile Manager -->
-                                <div class="panel" data-panel="profileManager" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">Rename profiles, recolor them, assign a catalog avatar, toggle addon/plugin sharing with profile 1, add a new profile, or permanently delete a profile and all of its data.</p>
-                                    </div>
-                                    <div class="action-buttons" style="margin-bottom:1rem;">
-                                        <button class="btn btn-primary" id="addProfileBtn" type="button">Add Profile</button>
-                                    </div>
-                                    <div id="profileManagerList"></div>
-                                    <p class="sync-status" id="profileManagerStatus"></p>
-                                </div>
-
-                                <!-- Dashboard -->
-                                <div class="panel" data-panel="dashboard" style="display:none;">
-                                    <div class="panel-head">
-                                        <p class="panel-desc">A quick summary of what's synced across all your profiles, plus live API health.</p>
-                                    </div>
-                                    <div id="dashboardHealth"></div>
-                                    <div id="dashboardOverview"></div>
-                                    <p class="sync-status" id="dashboardStatus"></p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <footer class="site-footer">
-            <div class="wrap footer-content">
-                <span>Eclipsia • distributed under GPL v3</span>
-                <a class="footer-link" href="../privacy/">Privacy Policy</a>
-                <a class="footer-link" href="https://github.com/NuvioMedia" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">github.com/NuvioMedia</a>
+          <div class="install-container" id="accountCard">
+            <div class="install-titlebar">
+              <span class="install-titlebar-label">nuvio account sync</span>
             </div>
-        </footer>
 
+            <div class="install-body">
+              <p class="hero-description" style="margin-bottom: 1.25rem">
+                Sign in to your <strong>Nuvio</strong> account to add Eclipsia
+                and manage synced account.
+              </p>
+
+              <div class="warning-banner banner-neutral">
+                <span class="mark">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 16v-4" />
+                    <path d="M12 8h.01" />
+                  </svg>
+                </span>
+                <div class="banner-body">
+                  <p align="justify">
+                    This is not an official Nuvio page. Your email and password
+                    are sent directly to Nuvio's own backend over HTTPS — this
+                    page never stores your password. Everything below talks
+                    directly to your Nuvio account's public API using your own
+                    session token.
+                  </p>
+                </div>
+              </div>
+
+              <details class="manual-toggle" id="signinPrivacyNote">
+                <summary>
+                  <span class="summary-label">
+                    <svg
+                      class="summary-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                      <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    What happens when you sign in here
+                  </span>
+                  <svg
+                    class="chev"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </summary>
+                <div class="manual-toggle-body">
+                  <div class="privacy-note-block">
+                    <ul>
+                      <li>
+                        <strong
+                          >Your credentials go straight to Nuvio's
+                          Servers</strong
+                        >
+                        over HTTPS — they never pass through or get logged by
+                        this site itself.
+                      </li>
+                      <li>
+                        <strong
+                          >Your session token is kept in this browser tab
+                          only</strong
+                        >
+                        (sessionStorage, not localStorage), so it's cleared
+                        automatically when you close the tab.
+                      </li>
+                      <li>
+                        <strong
+                          >Every action below is scoped to your own
+                          account</strong
+                        >
+                        and only touches the resource you explicitly edit (a
+                        single profile's plugins, a single profile's library,
+                        etc.).
+                      </li>
+                      <li>
+                        <strong
+                          >Full-replace actions are labeled clearly.</strong
+                        >
+                        Addons, plugins, library, profiles, and collections use
+                        "full replace" sync — removing something from a list and
+                        saving deletes it from your account. Watch progress and
+                        watch history use non-destructive merge, so pushes never
+                        delete existing entries; use the explicit Delete button
+                        for those.
+                      </li>
+                      <li>
+                        <strong
+                          >No analytics or tracking scripts run on this
+                          page</strong
+                        >
+                        — the site's Content-Security-Policy only allows
+                        requests to Nuvio's backend and nowhere else.
+                      </li>
+                      <li>
+                        Prefer not to enter your password on a third-party page?
+                        You can always add the plugin manually from the
+                        <a
+                          href="../#install"
+                          style="
+                            color: var(--ink-secondary);
+                            border-bottom: 1px dashed var(--line-hover);
+                          "
+                          >homepage install guide</a
+                        >
+                        instead — no account needed.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </details>
+
+              <div id="authSignedOut">
+                <div
+                  class="filter-bar auth-tabs"
+                  id="authTabs"
+                  role="group"
+                  aria-label="Choose sign in or create account"
+                >
+                  <button
+                    class="filter-chip active"
+                    data-auth-tab="signin"
+                    type="button"
+                  >
+                    Sign In
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-auth-tab="signup"
+                    type="button"
+                  >
+                    Create Account
+                  </button>
+                </div>
+
+                <form class="account-form" id="authForm" novalidate>
+                  <div class="form-field">
+                    <label class="form-label" for="authEmail">Email</label>
+                    <input
+                      class="form-input"
+                      type="email"
+                      id="authEmail"
+                      name="email"
+                      placeholder="you@example.com"
+                      autocomplete="email"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="authPassword"
+                      >Password</label
+                    >
+                    <input
+                      class="form-input"
+                      type="password"
+                      id="authPassword"
+                      name="password"
+                      placeholder="••••••••"
+                      autocomplete="current-password"
+                      minlength="6"
+                      required
+                    />
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    id="authSubmitBtn"
+                  >
+                    Sign In
+                  </button>
+                </form>
+
+                <p class="sync-status" id="authStatus"></p>
+              </div>
+
+              <div id="authSignedIn" style="display: none">
+                <div class="account-user-row">
+                  <span class="who" id="authWhoami"></span>
+                  <button class="link-btn" id="signOutBtn" type="button">
+                    Sign out
+                  </button>
+                </div>
+
+                <div class="guide-note" style="margin-bottom: 1.25rem">
+                  For full account settings — password/email changes, full
+                  profile settings, and more — visit
+                  <a
+                    href="https://nuvio.tv/account/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    referrerpolicy="no-referrer"
+                    style="color: var(--accent-ok)"
+                    ><strong>nuvio.tv/account/login</strong></a
+                  >
+                  directly on Nuvio's own site.
+                </div>
+
+                <div class="form-field" style="margin-bottom: 1.25rem">
+                  <label class="form-label" for="profileSelect"
+                    >Active profile</label
+                  >
+                  <select class="form-input" id="profileSelect"></select>
+                </div>
+
+                <div
+                  class="filter-bar panel-nav"
+                  id="panelNav"
+                  role="tablist"
+                  aria-label="Account sections"
+                >
+                  <button
+                    class="filter-chip active"
+                    data-panel="plugins"
+                    type="button"
+                  >
+                    Plugins
+                  </button>
+                  <button class="filter-chip" data-panel="addons" type="button">
+                    Addons
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-panel="library"
+                    type="button"
+                  >
+                    Library
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-panel="progress"
+                    type="button"
+                  >
+                    Watch Progress
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-panel="history"
+                    type="button"
+                  >
+                    Watch History
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-panel="settings"
+                    type="button"
+                  >
+                    Settings
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-panel="homeCatalog"
+                    type="button"
+                  >
+                    Home Catalog
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-panel="collections"
+                    type="button"
+                  >
+                    Collections
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-panel="profileManager"
+                    type="button"
+                  >
+                    Profiles
+                  </button>
+                  <button
+                    class="filter-chip"
+                    data-panel="dashboard"
+                    type="button"
+                  >
+                    Dashboard
+                  </button>
+                </div>
+
+                <select
+                  class="form-input panel-nav-select"
+                  id="panelNavSelect"
+                  aria-label="Account sections"
+                >
+                  <option value="plugins" selected>Plugins</option>
+                  <option value="addons">Addons</option>
+                  <option value="library">Library</option>
+                  <option value="progress">Watch Progress</option>
+                  <option value="history">Watch History</option>
+                  <option value="settings">Settings</option>
+                  <option value="homeCatalog">Home Catalog</option>
+                  <option value="collections">Collections</option>
+                  <option value="profileManager">Profiles</option>
+                  <option value="dashboard">Dashboard</option>
+                </select>
+
+                <div id="panels">
+                  <div class="panel" data-panel="plugins">
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        Content source plugins for the active profile. Full
+                        replace — removing a row and saving deletes it from your
+                        account.
+                      </p>
+                    </div>
+                    <div class="action-buttons" style="margin-bottom: 1rem">
+                      <button
+                        class="btn btn-primary"
+                        id="quickAddEclipsiaBtn"
+                        type="button"
+                      >
+                        Add Eclipsia to This Profile
+                      </button>
+                      <select
+                        class="form-input quick-add-select"
+                        id="quickAddManifestSelect"
+                        aria-label="Eclipsia manifest variant"
+                      >
+                        <option value="stable" selected>Stable</option>
+                        <option value="english">English</option>
+                        <option value="main">Main</option>
+                      </select>
+                    </div>
+                    <div class="resource-list" id="pluginsList"></div>
+                    <p class="sync-status" id="pluginsStatus"></p>
+                  </div>
+
+                  <div class="panel" data-panel="addons" style="display: none">
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        Catalog / metadata / subtitle / playback addons for the
+                        active profile. Full replace.
+                      </p>
+                    </div>
+                    <div class="action-buttons" style="margin-bottom: 1rem">
+                      <button
+                        class="btn btn-primary"
+                        id="addAddonBtn"
+                        type="button"
+                      >
+                        Add Addon…
+                      </button>
+                    </div>
+                    <div class="resource-list" id="addonsList"></div>
+                    <p class="sync-status" id="addonsStatus"></p>
+                  </div>
+
+                  <div class="panel" data-panel="library" style="display: none">
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        Saved / favorited titles for the active profile. Full
+                        replace.
+                      </p>
+                    </div>
+                    <div class="resource-list" id="libraryList"></div>
+                    <p class="sync-status" id="libraryStatus"></p>
+                  </div>
+
+                  <div
+                    class="panel"
+                    data-panel="progress"
+                    style="display: none"
+                  >
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        "Continue watching" entries for the active profile.
+                        Non-destructive merge on push — use Delete to remove an
+                        entry.
+                      </p>
+                    </div>
+                    <div class="resource-list" id="progressList"></div>
+                    <p class="sync-status" id="progressStatus"></p>
+                  </div>
+
+                  <div class="panel" data-panel="history" style="display: none">
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        Playback history for the active profile. Non-destructive
+                        merge on push — use Delete to remove an entry.
+                      </p>
+                    </div>
+                    <div class="resource-list" id="historyList"></div>
+                    <p class="sync-status" id="historyStatus"></p>
+                  </div>
+
+                  <div
+                    class="panel"
+                    data-panel="settings"
+                    style="display: none"
+                  >
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        Raw settings blob (theme, player quality, subtitle
+                        language, autoplay, etc.) for the active profile on the
+                        "tv" platform namespace. Edit the JSON directly — saving
+                        fully replaces this blob.
+                      </p>
+                    </div>
+                    <textarea
+                      class="form-input json-editor"
+                      id="settingsJson"
+                      rows="10"
+                      spellcheck="false"
+                    ></textarea>
+                    <div class="action-buttons" style="margin-top: 0.75rem">
+                      <button
+                        class="btn btn-primary"
+                        id="settingsSaveBtn"
+                        type="button"
+                      >
+                        Save
+                      </button>
+                      <button class="btn" id="settingsReloadBtn" type="button">
+                        Reload
+                      </button>
+                    </div>
+                    <p class="sync-status" id="settingsStatus"></p>
+                  </div>
+
+                  <div
+                    class="panel"
+                    data-panel="homeCatalog"
+                    style="display: none"
+                  >
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        Home screen layout / hidden catalogs for the active
+                        profile on the "tv" platform namespace. Saving fully
+                        replaces this blob.
+                      </p>
+                    </div>
+                    <textarea
+                      class="form-input json-editor"
+                      id="homeCatalogJson"
+                      rows="10"
+                      spellcheck="false"
+                    ></textarea>
+                    <div class="action-buttons" style="margin-top: 0.75rem">
+                      <button
+                        class="btn btn-primary"
+                        id="homeCatalogSaveBtn"
+                        type="button"
+                      >
+                        Save
+                      </button>
+                      <button
+                        class="btn"
+                        id="homeCatalogReloadBtn"
+                        type="button"
+                      >
+                        Reload
+                      </button>
+                    </div>
+                    <p class="sync-status" id="homeCatalogStatus"></p>
+                  </div>
+
+                  <div
+                    class="panel"
+                    data-panel="collections"
+                    style="display: none"
+                  >
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        Curated collections / folders for the active profile.
+                        Saving fully replaces the collections list — push an
+                        empty array to clear it.
+                      </p>
+                    </div>
+                    <textarea
+                      class="form-input json-editor"
+                      id="collectionsJson"
+                      rows="10"
+                      spellcheck="false"
+                    ></textarea>
+                    <div class="action-buttons" style="margin-top: 0.75rem">
+                      <button
+                        class="btn btn-primary"
+                        id="collectionsSaveBtn"
+                        type="button"
+                      >
+                        Save
+                      </button>
+                      <button
+                        class="btn"
+                        id="collectionsReloadBtn"
+                        type="button"
+                      >
+                        Reload
+                      </button>
+                    </div>
+                    <p class="sync-status" id="collectionsStatus"></p>
+                  </div>
+
+                  <div
+                    class="panel"
+                    data-panel="profileManager"
+                    style="display: none"
+                  >
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        Rename profiles, recolor them, assign a catalog avatar,
+                        toggle addon/plugin sharing with profile 1, add a new
+                        profile, or permanently delete a profile and all of its
+                        data.
+                      </p>
+                    </div>
+                    <div class="action-buttons" style="margin-bottom: 1rem">
+                      <button
+                        class="btn btn-primary"
+                        id="addProfileBtn"
+                        type="button"
+                      >
+                        Add Profile
+                      </button>
+                    </div>
+                    <div id="profileManagerList"></div>
+                    <p class="sync-status" id="profileManagerStatus"></p>
+                  </div>
+
+                  <div
+                    class="panel"
+                    data-panel="dashboard"
+                    style="display: none"
+                  >
+                    <div class="panel-head">
+                      <p class="panel-desc">
+                        A quick summary of what's synced across all your
+                        profiles, plus live API health.
+                      </p>
+                    </div>
+                    <div id="dashboardHealth"></div>
+                    <div id="dashboardOverview"></div>
+                    <p class="sync-status" id="dashboardStatus"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="wrap footer-content">
+          <span>Eclipsia • distributed under GPL v3</span>
+          <a class="footer-link" href="../privacy/">Privacy Policy</a>
+          <a
+            class="footer-link"
+            href="https://github.com/NuvioMedia"
+            target="_blank"
+            rel="noopener noreferrer"
+            referrerpolicy="no-referrer"
+            >github.com/NuvioMedia</a
+          >
+        </div>
+      </footer>
+
+      <nav class="mobile-tabbar" id="mobileTabbar" aria-label="Primary">
+        <a class="tabbar-item" href="../">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"
+            />
+          </svg>
+          <span>Home</span>
+        </a>
+        <a class="tabbar-item" href="../guide/">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path
+              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"
+            />
+          </svg>
+          <span>Guide</span>
+        </a>
+        <a class="tabbar-item" href="./">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5" />
+          </svg>
+          <span>Account</span>
+        </a>
+      </nav>
     </div>
 
     <script src="../assets/js/nuvio-client.js"></script>
     <script src="../assets/js/account.js" defer></script>
-
-</body>
-
+    <script src="../assets/js/mobile-app.js" defer></script>
+  </body>
 </html>

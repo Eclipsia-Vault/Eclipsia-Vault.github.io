@@ -1,107 +1,110 @@
-(function() {
+(function () {
 	'use strict';
 
-	const MANIFEST_URL = 'https://raw.githubusercontent.com/Eclipsia-Vault/eclipsia-nuvio/refs/heads/main/manifest.json';
+	const MANIFEST_URL = 'https://codeberg.org/eclipsia/eclipsia-nuvio/raw/branch/main/manifest.json';
+
+	const MANIFEST_FETCH_URL = 'https://codeberg.org/api/v1/repos/eclipsia/eclipsia-nuvio/raw/manifest.json?ref=main';
 
 	const FALLBACK_SCRAPERS = [{
-			name: 'Eclipsia',
-			provider: 'NoTorrent',
-			content: 'Movies & TV Shows',
-			language: 'English',
-			status: 'enabled',
-			notes: 'English only',
-			types: ['movies', 'tv']
-		},
-		{
-			name: 'Soryn',
-			provider: 'Netmirror',
-			content: 'Movies & TV Shows',
-			language: 'English, Hindi',
-			status: 'enabled',
-			notes: 'Requires VPN in some regions',
-			types: ['movies', 'tv']
-		},
-		{
-			name: 'Vornix',
-			provider: 'Multi Providers (4K)',
-			content: 'Movies & TV Shows',
-			language: 'English',
-			status: 'enabled',
-			notes: '4K content only',
-			types: ['movies', 'tv']
-		},
-		{
-			name: 'Onyxia',
-			provider: 'AniZone',
-			content: 'Anime',
-			language: 'English, Japanese',
-			status: 'enabled',
-			notes: 'Subbed & dubbed anime',
-			types: ['anime']
-		},
-		{
-			name: 'Novus',
-			provider: 'CineFreak',
-			content: 'Movies & TV Shows',
-			language: 'Bangla, English, Hindi',
-			status: 'enabled',
-			notes: 'Limited TV show catalog',
-			types: ['movies', 'tv']
-		},
-		{
-			name: 'Mavonyx',
-			provider: 'MovieBox',
-			content: 'Movies, TV & Anime',
-			language: 'English, Bangla, Hindi',
-			status: 'enabled',
-			notes: 'Supports MP4, DASH',
-			types: ['movies', 'tv', 'anime']
-		},
-		{
-			name: 'Pynvix',
-			provider: 'Multi Providers (1080p)',
-			content: 'Movies & TV Shows',
-			language: 'Bangla, English, Hindi',
-			status: 'enabled',
-			notes: '1080p content only',
-			types: ['movies', 'tv']
-		},
-		{
-			name: 'Solunix',
-			provider: 'Stravo',
-			content: 'Movies & TV Shows',
-			language: 'English',
-			status: 'enabled',
-			notes: 'Download friendly',
-			types: ['movies', 'tv']
-		},
-		{
-			name: 'Nyxora',
-			provider: 'Vidlink',
-			content: 'Movies, TV & Anime',
-			language: 'English, Bangla, Hindi',
-			status: 'enabled',
-			notes: 'Requires VPN in some regions',
-			types: ['movies', 'tv', 'anime']
-		},
-		{
-			name: 'Karnis',
-			provider: 'Castle',
-			content: 'Movies & TV Shows',
-			language: 'English, Hindi',
-			status: 'enabled',
-			notes: 'Some titles have mismatched languages',
-			types: ['movies', 'tv']
-		},
-		{
-			name: 'Kryxalia',
-			provider: 'AniNeko',
-			content: 'Anime',
-			language: 'English, Japanese',
-			status: 'disabled',
-			notes: 'Currently not working',
-			types: ['anime']
-		}
+		name: 'Eclipsia',
+		provider: 'NoTorrent',
+		content: 'Movies & TV Shows',
+		language: 'English',
+		status: 'enabled',
+		notes: 'English only',
+		types: ['movies', 'tv']
+	},
+	{
+		name: 'Soryn',
+		provider: 'Netmirror',
+		content: 'Movies & TV Shows',
+		language: 'English, Hindi',
+		status: 'enabled',
+		notes: 'Requires VPN in some regions',
+		types: ['movies', 'tv']
+	},
+	{
+		name: 'Vornix',
+		provider: 'Multi Providers (4K)',
+		content: 'Movies & TV Shows',
+		language: 'English',
+		status: 'enabled',
+		notes: '4K content only',
+		types: ['movies', 'tv']
+	},
+	{
+		name: 'Onyxia',
+		provider: 'AniZone',
+		content: 'Anime',
+		language: 'English, Japanese',
+		status: 'enabled',
+		notes: 'Subbed & dubbed anime',
+		types: ['anime']
+	},
+	{
+		name: 'Novus',
+		provider: 'CineFreak',
+		content: 'Movies & TV Shows',
+		language: 'Bangla, English, Hindi',
+		status: 'enabled',
+		notes: 'Limited TV show catalog',
+		types: ['movies', 'tv']
+	},
+	{
+		name: 'Mavonyx',
+		provider: 'MovieBox',
+		content: 'Movies, TV & Anime',
+		language: 'English, Bangla, Hindi',
+		status: 'enabled',
+		notes: 'Supports MP4, DASH',
+		types: ['movies', 'tv', 'anime']
+	},
+	{
+		name: 'Pynvix',
+		provider: 'Multi Providers (1080p)',
+		content: 'Movies & TV Shows',
+		language: 'Bangla, English, Hindi',
+		status: 'enabled',
+		notes: '1080p content only',
+		types: ['movies', 'tv']
+	},
+	{
+		name: 'Solunix',
+		provider: 'Stravo',
+		content: 'Movies & TV Shows',
+		language: 'English',
+		status: 'enabled',
+		notes: 'Download friendly',
+		types: ['movies', 'tv']
+	},
+	{
+		name: 'Nyxora',
+		provider: 'Vidlink',
+		content: 'Movies, TV & Anime',
+		language: 'English, Bangla, Hindi',
+		status: 'enabled',
+		notes: 'Requires VPN in some regions',
+		types: ['movies', 'tv', 'anime']
+	},
+	{
+		name: 'Karnis',
+		provider: 'Castle',
+		content: 'Movies & TV Shows',
+		language: 'English, Hindi',
+		status: 'enabled',
+		notes: 'Some titles have mismatched languages',
+		types: ['movies', 'tv']
+	},
+	{
+		name: 'Kryxalia',
+		provider: 'AniNeko',
+		content: 'Anime',
+		language: 'English, Japanese',
+		status: 'disabled',
+		disabledReason: 'Source offline',
+		notes: 'Currently not working',
+		types: ['anime']
+	}
 	];
 
 	let scrapers = [];
@@ -114,7 +117,6 @@
 		scraperContainer: document.getElementById('scraperCards'),
 		filterBar: document.getElementById('filterBar'),
 		noResults: document.getElementById('noResults'),
-		headerCta: document.getElementById('headerCta'),
 		fabAdd: document.getElementById('fabAdd'),
 		fabTop: document.getElementById('fabTop'),
 		heroSection: document.getElementById('heroSection'),
@@ -130,10 +132,14 @@
 		statActive: document.getElementById('statActive'),
 		statLangs: document.getElementById('statLangs'),
 		manifestVersion: document.getElementById('manifestVersion'),
-		lastUpdated: document.getElementById('lastUpdated')
+		lastUpdated: document.getElementById('lastUpdated'),
+		providerSearch: document.getElementById('providerSearch'),
+		providerSort: document.getElementById('providerSort')
 	};
 
 	let activeFilter = 'all';
+	let activeSort = 'default';
+	let activeSearch = '';
 
 	function escapeHtml(str) {
 		return String(str ?? '').replace(/[&<>"']/g, (c) => ({
@@ -142,7 +148,7 @@
 			'>': '&gt;',
 			'"': '&quot;',
 			"'": '&#39;'
-		} [c]));
+		}[c]));
 	}
 
 	function mapManifestScraper(s) {
@@ -178,6 +184,7 @@
 			content,
 			language,
 			status: s.enabled ? 'enabled' : 'disabled',
+			disabledReason: s.enabled ? '' : (s.disabledReason || 'Currently unavailable'),
 			notes,
 			types: Array.from(typeSet),
 			contentLanguage: Array.isArray(s.contentLanguage) ? s.contentLanguage : []
@@ -200,20 +207,20 @@
 		if (state) els.syncStatus.classList.add(state);
 	}
 
-	function renderSkeleton(count = 4) {
+	function renderSkeleton(count = 6) {
 		if (!els.scraperContainer) return;
 		els.scraperContainer.innerHTML = Array.from({ length: count }).map(() => `
       <article class="provider-row skeleton-row" aria-hidden="true">
         <div class="provider-id">
-          <span class="skeleton-block" style="width:70%;height:14px;"></span>
-          <span class="skeleton-block" style="width:45%;height:11px;"></span>
+          <span class="skeleton-block"></span>
+          <span class="skeleton-block"></span>
         </div>
         <div class="provider-meta">
-          <span class="skeleton-block" style="width:85%;height:11px;"></span>
-          <span class="skeleton-block" style="width:60%;height:11px;"></span>
+          <span class="skeleton-block"></span>
+          <span class="skeleton-block"></span>
         </div>
-        <div class="skeleton-block" style="width:90%;height:11px;"></div>
-        <div class="status-cell"><span class="skeleton-block" style="width:64px;height:20px;"></span></div>
+        <div class="skeleton-block"></div>
+        <div class="status-cell"><span class="skeleton-block"></span></div>
       </article>
     `).join('');
 	}
@@ -221,8 +228,9 @@
 	async function loadProviders() {
 		setSyncStatus('Loading providers from manifest.json…');
 		renderSkeleton();
+
 		try {
-			const res = await fetch(MANIFEST_URL, {
+			const res = await fetch(MANIFEST_FETCH_URL, {
 				cache: 'no-store',
 				referrerPolicy: 'no-referrer'
 			});
@@ -237,20 +245,63 @@
 			scrapers = FALLBACK_SCRAPERS;
 			setSyncStatus('Could not reach manifest.json — showing last known list', 'error');
 		}
+
 		renderRows();
 		updateStats(scrapers);
-		applyFilter(activeFilter);
-		if (els.scraperContainer) delete els.scraperContainer.dataset.revealTagged;
-		initScrollReveal();
+		animateRows();
+	}
+
+	function getSortedFilteredScrapers() {
+		let list = scrapers.slice();
+
+		if (activeSearch) {
+			const q = activeSearch.toLowerCase();
+			list = list.filter(s =>
+				s.name.toLowerCase().includes(q) ||
+				s.provider.toLowerCase().includes(q)
+			);
+		}
+
+		if (activeFilter !== 'all') {
+			list = list.filter(s => s.types.includes(activeFilter));
+		}
+
+		if (activeSort === 'name-asc') {
+			list.sort((a, b) => a.name.localeCompare(b.name));
+		} else if (activeSort === 'name-desc') {
+			list.sort((a, b) => b.name.localeCompare(a.name));
+		} else if (activeSort === 'active-first') {
+			list.sort((a, b) => {
+				if (a.status === b.status) return 0;
+				return a.status === 'enabled' ? -1 : 1;
+			});
+		}
+
+		return list;
 	}
 
 	function renderRows() {
 		if (!els.scraperContainer) return;
-		els.scraperContainer.innerHTML = scrapers.map(s => `
+		const list = getSortedFilteredScrapers();
+
+		if (!list.length) {
+			els.scraperContainer.innerHTML = '';
+			if (els.noResults) els.noResults.classList.add('visible');
+			return;
+		}
+		if (els.noResults) els.noResults.classList.remove('visible');
+
+		els.scraperContainer.innerHTML = list.map(s => {
+			const isDisabled = s.status !== 'enabled';
+			const disabledBadge = isDisabled
+				? `<span class="disabled-reason">${escapeHtml(s.disabledReason || s.notes || 'Unavailable')}</span>`
+				: '';
+			return `
       <article class="provider-row ${s.status}" data-types="${s.types.join(',')}">
         <div class="provider-id">
           <span class="provider-name">${escapeHtml(s.name)}</span>
           <span class="provider-provider">${escapeHtml(s.provider)}</span>
+          ${disabledBadge}
         </div>
         <div class="provider-meta">
           <div class="row"><span class="k">content</span><span class="v">${escapeHtml(s.content)}</span></div>
@@ -258,28 +309,37 @@
         </div>
         <div class="provider-notes">${escapeHtml(s.notes)}</div>
         <div class="status-cell">
-          <span class="status-pill ${s.status === 'enabled' ? 'on' : 'off'}">${s.status === 'enabled' ? 'Enabled' : 'Disabled'}</span>
+          <span class="status-pill ${isDisabled ? 'off' : 'on'}">${isDisabled ? 'Disabled' : 'Enabled'}</span>
         </div>
       </article>
-    `).join('');
+    `;
+		}).join('');
 	}
 
 	function applyFilter(filter) {
 		activeFilter = filter;
-		const rows = els.scraperContainer ? els.scraperContainer.querySelectorAll('.provider-row') : [];
-		let visibleCount = 0;
-		rows.forEach(row => {
-			const types = (row.getAttribute('data-types') || '').split(',');
-			const match = filter === 'all' || types.includes(filter);
-			row.classList.toggle('filtered-out', !match);
-			if (match) visibleCount++;
-		});
-		if (els.noResults) els.noResults.classList.toggle('visible', visibleCount === 0);
 		if (els.filterBar) {
 			els.filterBar.querySelectorAll('.filter-chip').forEach(chip => {
 				chip.classList.toggle('active', chip.dataset.filter === filter);
 			});
 		}
+		renderRows();
+		animateRows();
+	}
+
+	function animateRows() {
+		requestAnimationFrame(() => {
+			const rows = els.scraperContainer?.querySelectorAll('.provider-row:not(.skeleton-row)') || [];
+			rows.forEach((row, i) => {
+				row.style.opacity = '0';
+				row.style.transform = 'translateY(6px)';
+				setTimeout(() => {
+					row.style.transition = `opacity 280ms var(--ease-out-expo), transform 280ms var(--ease-out-expo)`;
+					row.style.opacity = '1';
+					row.style.transform = 'translateY(0)';
+				}, i * 40);
+			});
+		});
 	}
 
 	async function copyToClipboard(text) {
@@ -307,6 +367,12 @@
 		if (ok && els.repoCopyText && els.copyRepoBtn) {
 			els.repoCopyText.textContent = '✓ Copied!';
 			els.copyRepoBtn.classList.add('copied');
+			els.copyRepoBtn.style.transform = 'translateY(2px)';
+			els.copyRepoBtn.style.boxShadow = 'var(--shadow-inner)';
+			setTimeout(() => {
+				els.copyRepoBtn.style.transform = '';
+				els.copyRepoBtn.style.boxShadow = '';
+			}, 100);
 			setTimeout(() => {
 				els.repoCopyText.textContent = 'Copy Link';
 				els.copyRepoBtn.classList.remove('copied');
@@ -315,60 +381,64 @@
 	}
 
 	function initScrollCta() {
-		if (!els.heroSection || (!els.headerCta && !els.fabAdd)) return;
+		if (!els.heroSection || !els.fabAdd) return;
+
+		let ticking = false;
 		const onScroll = () => {
-			const headerHeight = els.siteHeader ? els.siteHeader.getBoundingClientRect().height : 0;
+			if (!ticking) {
+				requestAnimationFrame(() => {
+					const scrollY = window.scrollY;
+					const headerHeight = els.siteHeader ? els.siteHeader.getBoundingClientRect().height : 0;
 
-			let fabPast;
-			if (els.btnAddTop && els.btnAddTop.offsetParent !== null) {
-				const rect = els.btnAddTop.getBoundingClientRect();
-				fabPast = rect.bottom <= headerHeight;
-			} else {
-				fabPast = window.scrollY > els.heroSection.offsetTop + els.heroSection.offsetHeight - 80;
+					let fabPast;
+					if (els.btnAddTop && els.btnAddTop.offsetParent !== null) {
+						const rect = els.btnAddTop.getBoundingClientRect();
+						fabPast = rect.bottom <= headerHeight;
+					} else {
+						fabPast = scrollY > els.heroSection.offsetTop + els.heroSection.offsetHeight - 80;
+					}
+
+					if (els.fabAdd) els.fabAdd.classList.toggle('visible', fabPast);
+					if (els.fabTop) els.fabTop.classList.toggle('visible', scrollY > 400);
+
+					ticking = false;
+				});
+				ticking = true;
 			}
-
-			const desktopPast = window.scrollY > els.heroSection.offsetTop + els.heroSection.offsetHeight - 80;
-
-			if (els.headerCta) els.headerCta.classList.toggle('visible', desktopPast);
-			if (els.fabAdd) els.fabAdd.classList.toggle('visible', fabPast);
 		};
-		window.addEventListener('scroll', onScroll, {
-			passive: true
-		});
-		window.addEventListener('resize', onScroll, {
-			passive: true
-		});
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', onScroll, { passive: true });
 		onScroll();
 	}
 
 	function initProvidersToggle() {
 		if (!els.providersToggleBtn || !els.providersBody) return;
 		const label = els.providersToggleBtn.querySelector('span');
+
 		const setState = (expanded) => {
 			els.providersToggleBtn.setAttribute('aria-expanded', String(expanded));
 			els.providersBody.classList.toggle('expanded', expanded);
 			if (label) label.textContent = expanded ? 'Hide Available Providers' : 'Show Available Providers';
 		};
-		setState(false);
+		setState(true);
 		els.providersToggleBtn.addEventListener('click', () => {
 			const expanded = els.providersToggleBtn.getAttribute('aria-expanded') === 'true';
 			setState(!expanded);
 		});
 	}
-  
+
 	function initCollapsibleTriggers() {
 		document.querySelectorAll('[data-opens]').forEach((trigger) => {
 			const target = document.getElementById(trigger.getAttribute('data-opens'));
 			if (!target) return;
+
 			trigger.addEventListener('click', (e) => {
 				e.preventDefault();
 				target.open = true;
 				trigger.setAttribute('aria-expanded', 'true');
-				target.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
-				});
+				target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 			});
+
 			target.addEventListener('toggle', () => {
 				trigger.setAttribute('aria-expanded', String(target.open));
 			});
@@ -379,16 +449,14 @@
 		if (!els.lastUpdated) return;
 		try {
 			const res = await fetch(
-				'https://api.github.com/repos/Eclipsia-Vault/eclipsia-nuvio/commits?path=manifest.json&per_page=1', {
-					headers: {
-						Accept: 'application/vnd.github+json'
-					},
-					referrerPolicy: 'no-referrer'
-				}
+				'https://codeberg.org/api/v1/repos/eclipsia/eclipsia-nuvio/commits?path=manifest.json&limit=1&sha=main', {
+				headers: { Accept: 'application/json' },
+				referrerPolicy: 'no-referrer'
+			}
 			);
 			if (!res.ok) throw new Error(`HTTP ${res.status}`);
 			const commits = await res.json();
-			const dateStr = commits?.[0]?.commit?.author?.date;
+			const dateStr = commits?.[0]?.commit?.author?.date || commits?.[0]?.created;
 			if (!dateStr) throw new Error('No commit date');
 			const formatted = new Intl.DateTimeFormat('en-US', {
 				month: 'short',
@@ -431,12 +499,9 @@
 		});
 	}
 
-	function autoTagRevealGroups() {
-		const groupSelectors = [
-			'#scraperCards',
-			'.method-pick-grid',
-			'.platform-pick-grid'
-		];
+	function initScrollReveal() {
+		const groupSelectors = ['#scraperCards', '.method-pick-grid', '.platform-pick-grid'];
+
 		groupSelectors.forEach(sel => {
 			document.querySelectorAll(sel).forEach(group => {
 				if (group.dataset.revealTagged) return;
@@ -448,49 +513,66 @@
 				});
 			});
 		});
-	}
 
-	function initScrollReveal() {
-		autoTagRevealGroups();
 		const targets = document.querySelectorAll('.reveal');
 		if (!targets.length) return;
-		if (!('IntersectionObserver' in window)) {
+
+		if ('IntersectionObserver' in window) {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('in-view');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+			targets.forEach(el => observer.observe(el));
+		} else {
 			targets.forEach(el => el.classList.add('in-view'));
-			return;
 		}
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('in-view');
-					observer.unobserve(entry.target);
-				}
-			});
-		}, {
-			threshold: 0.04,
-			rootMargin: '0px 0px -5px 0px'
-		});
-		targets.forEach(el => observer.observe(el));
 	}
 
 	function initFabTop() {
 		if (!els.fabTop) return;
-		const onScroll = () => {
-			els.fabTop.classList.toggle('visible', window.scrollY > 400);
-		};
 		els.fabTop.addEventListener('click', () => {
-			window.scrollTo({
-				top: 0
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	}
+
+	function initDesktopScrollFx() {
+		if (!els.siteHeader) return;
+		const isDesktop = () => window.matchMedia('(min-width: 761px)').matches;
+
+		let ticking = false;
+		const onScroll = () => {
+			if (ticking) return;
+			ticking = true;
+			requestAnimationFrame(() => {
+				if (isDesktop()) {
+					els.siteHeader.classList.toggle('scrolled', window.scrollY > 4);
+					if (els.filterBar) {
+						const top = els.filterBar.getBoundingClientRect().top;
+						const headerH = els.siteHeader.getBoundingClientRect().height;
+						els.filterBar.classList.toggle('is-stuck', top <= headerH + 1);
+					}
+				} else {
+					els.siteHeader.classList.remove('scrolled');
+					if (els.filterBar) els.filterBar.classList.remove('is-stuck');
+				}
+				ticking = false;
 			});
-		});
-		window.addEventListener('scroll', onScroll, {
-			passive: true
-		});
+		};
+
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', onScroll, { passive: true });
 		onScroll();
 	}
 
 	function init() {
 		loadProviders();
 		loadLastUpdated();
+
 		if (els.copyRepoBtn) {
 			els.copyRepoBtn.addEventListener('click', handleCopy);
 			els.copyRepoBtn.addEventListener('keydown', (e) => {
@@ -500,26 +582,55 @@
 				}
 			});
 		}
+
 		if (els.filterBar) {
+			let filterTimeout;
 			els.filterBar.querySelectorAll('.filter-chip').forEach(chip => {
-				chip.addEventListener('click', () => applyFilter(chip.dataset.filter));
+				chip.addEventListener('click', () => {
+					clearTimeout(filterTimeout);
+					filterTimeout = setTimeout(() => applyFilter(chip.dataset.filter), 30);
+				});
 			});
 		}
+
+		if (els.providerSearch) {
+			let searchTimeout;
+			els.providerSearch.addEventListener('input', () => {
+				clearTimeout(searchTimeout);
+				searchTimeout = setTimeout(() => {
+					activeSearch = els.providerSearch.value.trim();
+					renderRows();
+					animateRows();
+				}, 120);
+			});
+		}
+
+		if (els.providerSort) {
+			els.providerSort.addEventListener('change', () => {
+				activeSort = els.providerSort.value;
+				renderRows();
+				animateRows();
+			});
+		}
+
 		initScrollCta();
 		initFabTop();
+		initDesktopScrollFx();
 		initProvidersToggle();
 		initCollapsibleTriggers();
 		initMobileNav();
 		initScrollReveal();
+
 		document.querySelectorAll('a[href^="#"]').forEach(a => {
-			a.addEventListener('click', function(e) {
+			a.addEventListener('click', function (e) {
 				const id = this.getAttribute('href').substring(1);
 				const target = document.getElementById(id);
 				if (target) {
 					e.preventDefault();
-					target.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
+					const offset = els.siteHeader ? els.siteHeader.offsetHeight : 80;
+					window.scrollTo({
+						top: target.offsetTop - offset,
+						behavior: 'smooth'
 					});
 				}
 			});
