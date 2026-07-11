@@ -481,7 +481,6 @@
       sub: 'iPhone & iPad',
       icon: ICONS.ios,
       intro: `Apple's TestFlight only allows 10,000 testers, and that's normally full — so sideloading with Sideloadly or AltStore is the reliable way in. Both need a computer the first time.`,
-      note: `Please don't message the Nuvio developers asking when TestFlight slots will open — it's genuinely not in their control.`,
       methods: [
         {
           id: 'sideloadly',
